@@ -5,7 +5,8 @@
     "info": "This car is a 2017's Model. Car's HorsePower is 136 KW. Fuel Tank Capacity 50L. Interior Color is Gray and Exterior color is White",
     "price": "24,800",
     "quantity": "8",
-    "supplier": "Jabed H"
+    "supplier": "Jabed H",
+    "ratting": "5"
   },
   {
     "name": "Mazda MAZDA6",
@@ -13,7 +14,8 @@
     "info": "This car is a 2018's Model. Car's HorsePower is 181 KW. Fuel Tank Capacity 80L. Interior Color is Red and Exterior color is Beige",
     "price": "26,900",
     "quantity": "5",
-    "supplier": "Elon Jack"
+    "supplier": "Elon Jack",
+    "ratting": "4"
   },
   {
     "name": "Volvo S80",
@@ -21,7 +23,8 @@
     "info": "This car is a 2019's Model. Car's HorsePower is 137 KW. Fuel Tank Capacity 78L. Interior Color is Blue and Exterior color is Beige",
     "price": "44,500",
     "quantity": "3",
-    "supplier": "Jeff Robert"
+    "supplier": "Jeff Robert",
+    "ratting": "4.5"
   },
   {
     "name": "BMW M4",
@@ -29,7 +32,8 @@
     "info": "This car is a 2017's Model. Car's HorsePower is 313 KW. Fuel Tank Capacity 60L. Interior Color is Red and Exterior color is Black",
     "price": "36,000",
     "quantity": "6",
-    "supplier": "Larry Jack"
+    "supplier": "Larry Jack",
+    "ratting": "4.8"
   },
   {
     "name": "Audi A4",
@@ -37,7 +41,8 @@
     "info": "This car is a 2016's Model. Car's HorsePower is 162 KW. Fuel Tank Capacity 63L. Interior Color is Gray and Exterior color is White",
     "price": "28,900",
     "quantity": "9",
-    "supplier": "Steve Jacob"
+    "supplier": "Steve Jacob",
+    "ratting": "5"
   },
   {
     "name": "Toyota Yaris",
@@ -45,6 +50,7 @@
     "info": "This car is a 2020's Model. Car's HorsePower is 250 KW. Fuel Tank Capacity 67L. Interior Color is White and Exterior color is Gray",
     "price": "22,800",
     "quantity": "10",
-    "supplier": "Mark John"
+    "supplier": "Mark John",
+    "ratting": "4.1"
   }
 ]

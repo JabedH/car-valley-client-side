@@ -7,12 +7,25 @@
   width: 100%;
 }
 .full-car {
+  border: none;
   transition: 0.5s;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .full-car:hover {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
-
+.full-car button {
+  border: none;
+  border: 1px solid #ccc;
+  background-color: transparent;
+  color: #03a4e0;
+  padding: 10px 25px;
+}
+.full-car button:hover {
+  background-color: #03a4e0;
+  color: white;
+  border: none;
+}
 .icon {
   color: #33c24d;
 }
@@ -25,4 +38,8 @@
 }
 .price {
   color: red;
+}
+.main-icon {
+  display: flex;
+  justify-content: space-around;
 }

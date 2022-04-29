@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import "./CarDetails.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import { faCircleCheck, faStar } from "@fortawesome/free-solid-svg-icons";
+import Rating from "react-rating";
 
 const CarDetails = () => {
   const [cars, setCars] = useState([]);
@@ -25,15 +26,33 @@ const CarDetails = () => {
               />
               <Card.Body>
                 <Card.Title>{car.name}</Card.Title>
+                <p>
+                  by <span style={{ color: "#03A4E0" }}>{car.supplier}</span>
+                </p>
                 <Card.Text>{car.info}</Card.Text>
                 <h3 className="price">${car.price}</h3>
-                <div className="icon-style">
-                  <div className="icon">
-                    <FontAwesomeIcon icon={faCircleCheck} />
+                <div className="main-icon">
+                  <div className="icon-style">
+                    <div className="icon">
+                      <FontAwesomeIcon icon={faCircleCheck} />
+                    </div>
+                    <p>
+                      In Stock <b>{car.quantity}</b>
+                    </p>
                   </div>
-                  <p>
-                    In Stock <b>{car.quantity}</b>
-                  </p>
+                  <div>
+                    <Rating
+                      initialRating={car.ratting}
+                      emptySymbol={<FontAwesomeIcon icon={faStar} />}
+                      fullSymbol={
+                        <FontAwesomeIcon
+                          style={{ color: "goldenrod" }}
+                          icon={faStar}
+                        />
+                      }
+                      readonly
+                    ></Rating>
+                  </div>
                 </div>
                 <button>Update Car</button>
               </Card.Body>
