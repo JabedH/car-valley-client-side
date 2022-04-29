@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Honda CR-V",
+    "img": "https://raw.githubusercontent.com/All-MyProject/car-vally-img/main/cars/Honda.jpg",
+    "info": "This car is a 2017's Model. Car's HorsePower is 136 KW. Fuel Tank Capacity 50L. Interior Color is Gray and Exterior color is White",
+    "price": "24,800",
+    "quantity": "8",
+    "supplier": "Jabed H"
+  },
+  {
+    "name": "Mazda MAZDA6",
+    "img": "https://raw.githubusercontent.com/All-MyProject/car-vally-img/main/cars/Mazda6.jpg",
+    "info": "This car is a 2018's Model. Car's HorsePower is 181 KW. Fuel Tank Capacity 80L. Interior Color is Red and Exterior color is Beige",
+    "price": "26,900",
+    "quantity": "5",
+    "supplier": "Elon Jack"
+  },
+  {
+    "name": "Volvo S80",
+    "img": "https://raw.githubusercontent.com/All-MyProject/car-vally-img/main/cars/Volvo.jpg",
+    "info": "This car is a 2019's Model. Car's HorsePower is 137 KW. Fuel Tank Capacity 78L. Interior Color is Blue and Exterior color is Beige",
+    "price": "44,500",
+    "quantity": "3",
+    "supplier": "Jeff Robert"
+  },
+  {
+    "name": "BMW M4",
+    "img": "https://raw.githubusercontent.com/All-MyProject/car-vally-img/main/cars/bmw.jpg",
+    "info": "This car is a 2017's Model. Car's HorsePower is 313 KW. Fuel Tank Capacity 60L. Interior Color is Red and Exterior color is Black",
+    "price": "36,000",
+    "quantity": "6",
+    "supplier": "Larry Jack"
+  },
+  {
+    "name": "Audi A4",
+    "img": "https://raw.githubusercontent.com/All-MyProject/car-vally-img/main/cars/marc.jpg",
+    "info": "This car is a 2016's Model. Car's HorsePower is 162 KW. Fuel Tank Capacity 63L. Interior Color is Gray and Exterior color is White",
+    "price": "28,900",
+    "quantity": "9",
+    "supplier": "Steve Jacob"
+  },
+  {
+    "name": "Toyota Yaris",
+    "img": "https://raw.githubusercontent.com/All-MyProject/car-vally-img/main/cars/toyota.jpeg",
+    "info": "This car is a 2020's Model. Car's HorsePower is 250 KW. Fuel Tank Capacity 67L. Interior Color is White and Exterior color is Gray",
+    "price": "22,800",
+    "quantity": "10",
+    "supplier": "Mark John"
+  }
+]
