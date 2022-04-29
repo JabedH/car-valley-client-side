@@ -1,0 +1,28 @@
+.car-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.car-details img {
+  width: 100%;
+}
+.full-car {
+  transition: 0.5s;
+}
+.full-car:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.icon {
+  color: #33c24d;
+}
+.icon-style {
+  display: flex;
+  justify-content: center;
+}
+.icon-style p {
+  margin-left: 5px;
+}
+.price {
+  color: red;
+}
