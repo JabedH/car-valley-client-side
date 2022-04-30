@@ -1,4 +1,23 @@
 .mission {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+.mission-text {
+  text-align: center;
+  font-size: 30px;
+  color: #ccc;
+}
+.mission-text h1 {
+  border: 1px solid #ccc;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.full-mission {
+  display: grid;
+  align-items: center;
 }
