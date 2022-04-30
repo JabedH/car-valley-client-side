@@ -20,12 +20,14 @@ const CarDetails = () => {
       <div className="car-details container">
         {cars.map((car) => (
           <div key={car._id}>
-            <Card className="full-car" style={{ width: "18rem" }}>
-              <Card.Img
-                style={{ height: "12rem" }}
-                variant="top"
-                src={car.img}
-              />
+            <Card className="full-car" style={{ width: "22rem" }}>
+              <div className="card-img">
+                <Card.Img
+                  style={{ height: "12rem" }}
+                  variant="top"
+                  src={car.img}
+                />
+              </div>
               <Card.Body>
                 <Card.Title>{car.name}</Card.Title>
                 <p>

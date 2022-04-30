@@ -28,11 +28,12 @@
   border: none;
 }
 .full-car img {
-  overflow: hidden;
   transition: 0.5s;
 }
 .full-car img:hover {
   transform: scale(1.1);
+}
+.card-img {
   overflow: hidden;
 }
 .icon {
