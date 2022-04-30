@@ -5,14 +5,16 @@ import "./CarDetails.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck, faStar } from "@fortawesome/free-solid-svg-icons";
 import Rating from "react-rating";
+import { Link, useNavigate } from "react-router-dom";
+import useCar from "../../../Hooks/useCar";
 
 const CarDetails = () => {
-  const [cars, setCars] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:5000/Cars")
-      .then((res) => res.json())
-      .then((data) => setCars(data));
-  }, []);
+  const [cars] = useCar();
+  const navigate = useNavigate();
+  const handleUpdate = (id) => {
+    console.log("clicked");
+    navigate(`/update/${id}`);
+  };
   return (
     <div>
       <h1 className="mt-5 mb-3 text-center">Recently Added</h1>
@@ -59,7 +61,10 @@ const CarDetails = () => {
                   </div>
                 </div>
                 <div className="text-center">
-                  <button>Update Car</button>
+                  <button onClick={() => handleUpdate(car._id)}>
+                    Update Car
+                  </button>
+                  {/* <Link to="/update"></Link>{" "} */}
                 </div>
               </Card.Body>
             </Card>

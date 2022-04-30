@@ -12,6 +12,7 @@ import MyCars from "./Components/MyCars/MyCars";
 import AddCar from "./Components/AddCar/AddCar";
 import Login from "./Components/Login/Login";
 import Logout from "./Components/Logout/Logout";
+import Update from "./Components/Update/Update";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/AddCar" element={<AddCar />} />
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
+        <Route path="/update/:updateId" element={<Update />} />
       </Routes>
     </div>
   );
