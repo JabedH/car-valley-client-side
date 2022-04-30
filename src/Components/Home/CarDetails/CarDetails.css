@@ -7,6 +7,7 @@
   width: 100%;
 }
 .full-car {
+  overflow-x: hidden;
   border: none;
   transition: 0.5s;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -26,6 +27,14 @@
   color: white;
   border: none;
 }
+.full-car img {
+  overflow: hidden;
+  transition: 0.5s;
+}
+.full-car img:hover {
+  transform: scale(1.1);
+  overflow: hidden;
+}
 .icon {
   color: #33c24d;
 }
@@ -41,5 +50,5 @@
 }
 .main-icon {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }

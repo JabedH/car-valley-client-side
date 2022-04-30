@@ -1,0 +1,22 @@
+[
+  {
+    "img": "https://raw.githubusercontent.com/All-MyProject/Vehicles/main/Vehicles/1.jpg",
+    "name": "New & Used Vehicles",
+    "info": "We are providing new and old car service over here. You can find your dream car over here. We are waiting for you"
+  },
+  {
+    "img": "https://raw.githubusercontent.com/All-MyProject/Vehicles/main/Vehicles/2.jpg",
+    "name": "Research & Reviews",
+    "info": "We are providing New and old car service over here. You can find your dream car over here"
+  },
+  {
+    "img": "https://raw.githubusercontent.com/All-MyProject/Vehicles/main/Vehicles/3.jpg",
+    "name": "Service & Repair",
+    "info": "We are providing Service and Repair after selling the car for customer satisfaction and closer to customer."
+  },
+  {
+    "img": "https://raw.githubusercontent.com/All-MyProject/Vehicles/main/Vehicles/4.jpg",
+    "name": "Stress Free Financing",
+    "info": "Car Valley provides a special offer for you you can pay your car price in monthly and enjoy your car driving"
+  }
+]

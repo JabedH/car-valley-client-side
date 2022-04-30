@@ -15,6 +15,8 @@ const CarDetails = () => {
   }, []);
   return (
     <div>
+      <h1 className="mt-5 mb-3 text-center">Recently Added</h1>
+      <h5 className="mb-5 text-center">Car Valley premium cars inventory</h5>
       <div className="car-details container">
         {cars.map((car) => (
           <div key={car._id}>
@@ -54,7 +56,9 @@ const CarDetails = () => {
                     ></Rating>
                   </div>
                 </div>
-                <button>Update Car</button>
+                <div className="text-center">
+                  <button>Update Car</button>
+                </div>
               </Card.Body>
             </Card>
           </div>
