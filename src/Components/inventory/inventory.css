@@ -18,3 +18,17 @@
 .delete button:hover {
   color: red;
 }
+.newItem {
+  display: flex;
+  justify-content: center;
+}
+.newItem a {
+  text-decoration: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  color: #03a4e0;
+}
+.newItem a:hover {
+  background-color: #03a4e0;
+  color: white;
+}

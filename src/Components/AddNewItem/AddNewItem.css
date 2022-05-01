@@ -1,0 +1,43 @@
+*:focus {
+  outline: none;
+}
+.update {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+.carinfo {
+  display: grid;
+  width: 70%;
+  margin: 0 auto;
+}
+.carinfo input {
+  margin-bottom: 10px;
+  border: none;
+  background-color: rgb(228, 227, 227);
+  padding: 10px;
+}
+.carinfo label {
+  font-weight: 500;
+  color: rgb(107 114 128);
+  margin-bottom: 5px;
+}
+.carinfo textarea {
+  background-color: rgb(228, 227, 227);
+  border: none;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.submit {
+  width: 100%;
+  background-color: tomato;
+}
+.carinfo button {
+  border: none;
+  padding: 10px;
+  background-color: transparent;
+  border: 1px solid #03a4e0;
+}
+.carinfo button:hover {
+  background-color: #03a4e0;
+  color: white;
+}

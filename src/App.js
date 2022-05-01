@@ -14,6 +14,7 @@ import Login from "./Components/Login/Login";
 import Logout from "./Components/Logout/Logout";
 import Update from "./Components/Update/Update";
 import Inventory from "./Components/inventory/inventory";
+import AddNewItem from "./Components/AddNewItem/AddNewItem";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/logout" element={<Logout />} />
         <Route path="/update/:updateId" element={<Update />} />
         <Route path="/inventory" element={<Inventory />}></Route>
+        <Route path="/addnewitem" element={<AddNewItem />}></Route>
       </Routes>
     </div>
   );

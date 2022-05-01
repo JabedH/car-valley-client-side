@@ -8,7 +8,7 @@ const useCarDetails = (updateId) => {
       .then((res) => res.json())
       .then((data) => setCarInfo(data));
   }, [updateId]);
-  return [carInfo];
+  return [carInfo, setCarInfo];
 };
 
 export default useCarDetails;
