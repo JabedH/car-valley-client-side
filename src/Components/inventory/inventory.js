@@ -7,9 +7,22 @@ import useCar from "../../Hooks/useCar";
 import "./inventory.css";
 
 const Inventory = () => {
-  const [cars] = useCar();
+  const [cars, setCars] = useCar();
   const handleDelete = (id) => {
     const confirmDelete = window.confirm("Are you want to delete?");
+    if (confirmDelete) {
+      const url = `http://localhost:5000/Cars/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            const remaining = cars.filter((car) => car._id !== id);
+            setCars(remaining);
+          }
+        });
+    }
   };
   return (
     <div className="container mt-5">

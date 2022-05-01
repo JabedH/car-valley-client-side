@@ -7,7 +7,7 @@ const useCar = () => {
       .then((res) => res.json())
       .then((data) => setCars(data));
   }, []);
-  return [cars];
+  return [cars, setCars];
 };
 
 export default useCar;
