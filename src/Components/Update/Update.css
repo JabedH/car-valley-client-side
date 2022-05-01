@@ -13,6 +13,10 @@
   background-color: tomato;
 }
 /* deliver */
+.update {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
 .deliver button {
   border: none;
   padding: 10px;

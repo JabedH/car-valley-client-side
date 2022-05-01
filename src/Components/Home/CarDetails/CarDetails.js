@@ -10,17 +10,23 @@ import useCar from "../../../Hooks/useCar";
 
 const CarDetails = () => {
   const [cars] = useCar();
+  const newcars = cars.slice(0, 6);
   const navigate = useNavigate();
   const handleUpdate = (id) => {
     console.log("clicked");
     navigate(`/update/${id}`);
   };
   return (
-    <div>
+    <div className="container">
       <h1 className="mt-5 mb-3 text-center">Recently Added</h1>
       <h5 className="mb-5 text-center">Car Valley premium cars inventory</h5>
+      <div className="car-inventory mb-4">
+        <Link className="inventory-link" to="/inventory">
+          Manage Inventory
+        </Link>
+      </div>
       <div className="car-details container">
-        {cars.map((car) => (
+        {newcars.map((car) => (
           <div key={car._id}>
             <Card className="full-car" style={{ width: "22rem" }}>
               <div className="card-img">

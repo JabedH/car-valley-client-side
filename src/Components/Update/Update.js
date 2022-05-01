@@ -70,7 +70,7 @@ const Update = () => {
         </div>
         <div>
           <h3 className="text-center">Add Stock</h3>
-          {/* <form onSubmit={addQuantity} className="quantity">
+          <form className="quantity">
             <input
               type="number"
               name="number"
@@ -80,7 +80,7 @@ const Update = () => {
             />
 
             <input type="submit" value="submit" />
-          </form> */}
+          </form>
         </div>
         <div>
           <Link to="/inventory">Manage Inventory</Link>

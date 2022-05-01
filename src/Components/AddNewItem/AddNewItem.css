@@ -1,13 +1,11 @@
 *:focus {
   outline: none;
 }
-.update {
-  display: grid;
-  justify-items: center;
-}
+
 .carinfo {
   display: grid;
-  width: 100%;
+  width: 60%;
+  margin: 0 auto;
 }
 .carinfo input {
   margin-bottom: 10px;
