@@ -1,0 +1,35 @@
+*:focus {
+  outline: none;
+}
+.btn-color {
+  background-color: transparent;
+  border: none;
+  border: 1px solid #03a4e0;
+}
+.login-btn button {
+  color: #03a4e0;
+}
+.btn-color:hover {
+  background-color: #03a4e0;
+  color: white;
+}
+.btn-color {
+  height: 40px;
+  border-radius: 5px;
+  color: white;
+  font-weight: 500;
+}
+.text-start {
+}
+.text-start input {
+  background-color: rgb(235, 235, 235);
+  border: 0;
+  border-radius: 5px;
+  height: 40px;
+  padding-left: 10px;
+}
+/* social-login" */
+.social-login {
+  display: flex;
+  justify-content: center;
+}

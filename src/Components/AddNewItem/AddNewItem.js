@@ -1,4 +1,5 @@
 import React from "react";
+import { toast, ToastContainer } from "react-toastify";
 import "./AddNewItem.css";
 
 const AddNewItem = () => {
@@ -22,7 +23,7 @@ const AddNewItem = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
-        alert("Added item successfully");
+        toast("Added item successfully");
         event.target.reset();
       });
   };
@@ -46,6 +47,7 @@ const AddNewItem = () => {
           <button type="submit">Submit Item</button>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };
