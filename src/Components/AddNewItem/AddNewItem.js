@@ -22,12 +22,6 @@ const AddNewItem = () => {
           <button type="submit">Update Car</button>
         </form>
       </div>
-      <div>
-        <div className="text-center">
-          <h1>hi</h1>
-          <button>Deliver car</button>
-        </div>
-      </div>
     </div>
   );
 };

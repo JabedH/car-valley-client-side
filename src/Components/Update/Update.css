@@ -1,10 +1,6 @@
 *:focus {
   outline: none;
 }
-.update {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-}
 .sold-car {
   width: 80%;
   margin: 0 auto;

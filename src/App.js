@@ -15,6 +15,7 @@ import Logout from "./Components/Logout/Logout";
 import Update from "./Components/Update/Update";
 import Inventory from "./Components/inventory/inventory";
 import AddNewItem from "./Components/AddNewItem/AddNewItem";
+import NotFound from "./Components/NotFound/NotFound";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/Reviews" element={<Reviews />} />
         <Route path="/Services" element={<Services />} />
@@ -34,6 +36,7 @@ function App() {
         <Route path="/update/:updateId" element={<Update />} />
         <Route path="/inventory" element={<Inventory />}></Route>
         <Route path="/addnewitem" element={<AddNewItem />}></Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
