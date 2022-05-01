@@ -1,0 +1,20 @@
+.table-img img {
+  width: 100%;
+}
+.table-img {
+  width: 100px;
+  margin: 0 auto;
+}
+.delete {
+  width: 10px;
+  background-color: transparent;
+}
+.delete button {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+}
+.delete button:hover {
+  color: red;
+}

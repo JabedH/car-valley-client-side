@@ -13,6 +13,7 @@ import AddCar from "./Components/AddCar/AddCar";
 import Login from "./Components/Login/Login";
 import Logout from "./Components/Logout/Logout";
 import Update from "./Components/Update/Update";
+import Inventory from "./Components/inventory/inventory";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/update/:updateId" element={<Update />} />
+        <Route path="/inventory" element={<Inventory />}></Route>
       </Routes>
     </div>
   );
