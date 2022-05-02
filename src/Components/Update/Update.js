@@ -82,7 +82,7 @@ const Update = () => {
             <input type="submit" value="submit" />
           </form>
         </div>
-        <div>
+        <div className="manage-inventory">
           <Link to="/inventory">Manage Inventory</Link>
         </div>
       </div>
