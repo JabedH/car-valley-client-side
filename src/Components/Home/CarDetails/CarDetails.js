@@ -39,7 +39,8 @@ const CarDetails = () => {
               <Card.Body>
                 <Card.Title>{car.name}</Card.Title>
                 <p>
-                  by <span style={{ color: "#03A4E0" }}>{car.supplier}</span>
+                  <b>Supplier</b>{" "}
+                  <span style={{ color: "#03A4E0" }}>{car.supplier}</span>
                 </p>
                 <Card.Text>{car.info}</Card.Text>
                 <h3 className="price">${car.price}</h3>
