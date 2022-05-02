@@ -18,9 +18,26 @@ const SocialLogin = () => {
   const location = useLocation();
   const navigate = useNavigate();
   let from = location.state?.from?.pathname || "/";
+  // if (user) {
+  //   console.log(user);
+  //   navigate(from, { replace: true });
+  // }
+  console.log(user?.user?.email);
   if (user) {
-    console.log(user);
-    navigate(from, { replace: true });
+    fetch("http://localhost:5000/login", {
+      method: "POST",
+      body: JSON.stringify({
+        email: user?.user?.email,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        localStorage.setItem("accessToken", data.token);
+        navigate(from, { replace: true });
+      });
   }
   return (
     <div onClick={() => signInWithGoogle()} className="social-icon">

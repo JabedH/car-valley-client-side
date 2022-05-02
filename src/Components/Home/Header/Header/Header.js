@@ -30,7 +30,7 @@ const Header = () => {
                 <Link to="Blog"> Blog</Link>
                 {user ? <Link to="ManageCars">Manage Cars</Link> : ""}
                 {user ? <Link to="MyCars">My Cars</Link> : ""}
-                {user ? <Link to="AddCar">Add Car</Link> : ""}
+                {user ? <Link to="additem">Add Item</Link> : ""}
                 {user ? (
                   <Link onClick={() => handleLogout()} to="/">
                     Logout

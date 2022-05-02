@@ -6,6 +6,7 @@ import "./AddNewItem.css";
 
 const AddNewItem = () => {
   const [user] = useAuthState(auth);
+  console.log(user.email);
   const handleNewItem = (event) => {
     event.preventDefault();
     const name = event.target.name.value;
@@ -16,13 +17,20 @@ const AddNewItem = () => {
     const newInfo = { name, img, price, quantity, info };
     // console.log("submited", info);
 
-    fetch("http://localhost:5000/Cars", {
+    fetch("http://localhost:5000/addCar", {
       method: "POST",
+      body: JSON.stringify({
+        name,
+        img,
+        price,
+        quantity,
+        info,
+        email: user.email,
+      }),
       headers: {
         authorization: `${user.email} ${localStorage.getItem("accessToken")}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(newInfo),
     })
       .then((response) => response.json())
       .then((data) => {

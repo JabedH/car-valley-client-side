@@ -30,26 +30,28 @@ const Login = () => {
   };
 
   let from = location.state?.from?.pathname || "/";
-  if (user) {
-    console.log(user);
-    navigate(from, { replace: true });
-  }
   // if (user) {
-  //   fetch("http://localhost:5000/login", {
-  //     method: "POST",
-  //     body: JSON.stringify({
-  //       email: user?.user?.email,
-  //     }),
-  //     headers: {
-  //       "Content-type": "application/json; charset=UTF-8",
-  //     },
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       localStorage.setItem("accessToken", data.token);
-  //       navigate(from, { replace: true });
-  //     });
+  //   console.log(user);
+  //   navigate(from, { replace: true });
   // }
+  console.log(user?.user?.email);
+  console.log(user?.email);
+  if (user) {
+    fetch("http://localhost:5000/login", {
+      method: "POST",
+      body: JSON.stringify({
+        email: user?.user?.email,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        localStorage.setItem("accessToken", data.token);
+        navigate(from, { replace: true });
+      });
+  }
   let ErrorHandle;
 
   if (error) {
