@@ -17,6 +17,7 @@ import AddNewItem from "./Components/AddNewItem/AddNewItem";
 import NotFound from "./Components/NotFound/NotFound";
 import "react-toastify/dist/ReactToastify.css";
 import Signup from "./Components/Signup/Signup";
+import ProtectedItem from "./Components/ProtectedItem/ProtectedItem";
 
 function App() {
   return (
@@ -33,7 +34,15 @@ function App() {
         <Route path="/MyCars" element={<MyCars />} />
         <Route path="/AddCar" element={<AddCar />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/update/:updateId" element={<Update />} />
+        <Route
+          path="/update/:updateId"
+          element={
+            <ProtectedItem>
+              {" "}
+              <Update />{" "}
+            </ProtectedItem>
+          }
+        />
         <Route path="/inventory" element={<Inventory />}></Route>
         <Route path="/addnewitem" element={<AddNewItem />}></Route>
         <Route path="/Singup" element={<Signup />} />
