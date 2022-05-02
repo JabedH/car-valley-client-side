@@ -1,14 +1,23 @@
-import React from "react";
+import { async } from "@firebase/util";
+import React, { useRef } from "react";
 import { Form } from "react-bootstrap";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 import auth from "../../firebase.init";
 import SocialLogin from "../SocialLogin/SoccialLogina";
 import "./Login.css";
 
 const Login = () => {
+  const emailRef = useRef("");
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  const [sendPasswordResetEmail, sending, error1] =
+    useSendPasswordResetEmail(auth);
+
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -22,11 +31,23 @@ const Login = () => {
   if (user) {
     navigate(from, { replace: true });
   }
+
+  const handleReset = async () => {
+    const email = emailRef.current.value;
+    console.log(email);
+    if (email) {
+      await sendPasswordResetEmail(email);
+      toast("sent reset email");
+    } else {
+      toast("please enter your email address");
+    }
+  };
   return (
     <div>
       <div>
         <Form onSubmit={Handlelogin} className="w-25 mx-auto text-start">
           <input
+            ref={emailRef}
             name="email"
             className="w-100 mt-3"
             type="email"
@@ -45,14 +66,24 @@ const Login = () => {
               Login
             </button>
           </div>
-          <div className="mt-3 text-center">
+          <div className="text-center  mt-3">
+            <Link
+              className="text-decoration-none"
+              to="/login"
+              onClick={handleReset}
+            >
+              Forget Password
+            </Link>
+          </div>
+          <div className="mt-2 mb-2 text-center">
             <Link to="/Singup" className="text-decoration-none  ">
-              Already you have an account?
+              Don't have any account?
             </Link>
           </div>
         </Form>
         <div className="social-login ">
           <SocialLogin />
+          <ToastContainer />
         </div>
       </div>
     </div>
