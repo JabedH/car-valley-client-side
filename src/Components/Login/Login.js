@@ -30,7 +30,10 @@ const Login = () => {
   };
 
   let from = location.state?.from?.pathname || "/";
-
+  if (user) {
+    console.log(user);
+    navigate(from, { replace: true });
+  }
   // if (user) {
   //   fetch("http://localhost:5000/login", {
   //     method: "POST",
@@ -56,10 +59,7 @@ const Login = () => {
       </div>
     );
   }
-  if (user) {
-    console.log(user);
-    navigate(from, { replace: true });
-  }
+
   const handleReset = async () => {
     const email = emailRef.current.value;
     console.log(email);

@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Gallery from "./Components/Gallery/Gallery";
+
 import Header from "./Components/Home/Header/Header/Header";
 import Home from "./Components/Home/Home/Home";
 import Reviews from "./Components/Reviews/Reviews";
@@ -26,7 +26,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
 
-        <Route path="/gallery" element={<Gallery />} />
         <Route path="/Reviews" element={<Reviews />} />
         <Route path="/Services" element={<Services />} />
         <Route path="/Blog" element={<Blog />} />
