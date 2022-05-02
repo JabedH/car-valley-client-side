@@ -5,7 +5,7 @@ import auth from "../../firebase.init";
 
 const ProtectedItem = ({ children }) => {
   const [user] = useAuthState(auth);
-  let location = useLocation();
+  const location = useLocation();
   if (!user) {
     return <Navigate to="/login" state={{ from: location }} replace />;
   }

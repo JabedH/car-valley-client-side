@@ -28,10 +28,25 @@ const Login = () => {
     const password = event.target.password.value;
     signInWithEmailAndPassword(email, password);
   };
+
   let from = location.state?.from?.pathname || "/";
-  if (user) {
-    navigate(from, { replace: true });
-  }
+
+  // if (user) {
+  //   fetch("http://localhost:5000/login", {
+  //     method: "POST",
+  //     body: JSON.stringify({
+  //       email: user?.user?.email,
+  //     }),
+  //     headers: {
+  //       "Content-type": "application/json; charset=UTF-8",
+  //     },
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       localStorage.setItem("accessToken", data.token);
+  //       navigate(from, { replace: true });
+  //     });
+  // }
   let ErrorHandle;
 
   if (error) {
@@ -41,7 +56,10 @@ const Login = () => {
       </div>
     );
   }
-
+  if (user) {
+    console.log(user);
+    navigate(from, { replace: true });
+  }
   const handleReset = async () => {
     const email = emailRef.current.value;
     console.log(email);
@@ -51,9 +69,10 @@ const Login = () => {
     }
     if (!email) {
       setLogError("please put your correct email");
-    } else {
-      toast("please enter your email address");
     }
+    // else {
+    //   toast("please enter your email address");
+    // }
   };
   return (
     <div>

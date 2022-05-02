@@ -59,7 +59,7 @@ const Update = () => {
         <h3>{carInfo.name}</h3>
         <p>{carInfo.info}</p>
         <p>${carInfo.price}</p>
-        <p>Quantity: 1</p>
+        <p>{carInfo.quantity === null ? 0 : carInfo.quantity}</p>
         <p>Supplier name: {carInfo.supplier} </p>
         <h5>Sold This Car</h5>
       </div>

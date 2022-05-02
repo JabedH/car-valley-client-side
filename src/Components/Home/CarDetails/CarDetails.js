@@ -50,7 +50,7 @@ const CarDetails = () => {
                       <FontAwesomeIcon icon={faCircleCheck} />
                     </div>
                     <p>
-                      In Stock <b>{car.quantity}</b>
+                      In Stock <b>{car.quantity === null ? 0 : car.quantity}</b>
                     </p>
                   </div>
                   <div>

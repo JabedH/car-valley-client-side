@@ -17,7 +17,7 @@ const Welcome = () => {
       </p>
       <div className="d-flex justify-content-center gap-5">
         {vehicles.map((vehicle) => (
-          <div>
+          <div key={vehicle._id}>
             <Card style={{ width: "18rem" }}>
               <Card.Img
                 style={{ height: "13rem" }}

@@ -43,8 +43,23 @@ function App() {
             </ProtectedItem>
           }
         />
-        <Route path="/inventory" element={<Inventory />}></Route>
-        <Route path="/addnewitem" element={<AddNewItem />}></Route>
+        <Route
+          path="/inventory"
+          element={
+            <ProtectedItem>
+              <Inventory />
+            </ProtectedItem>
+          }
+        ></Route>
+
+        <Route
+          path="/addnewitem"
+          element={
+            <ProtectedItem>
+              <AddNewItem />
+            </ProtectedItem>
+          }
+        ></Route>
         <Route path="/Singup" element={<Signup />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

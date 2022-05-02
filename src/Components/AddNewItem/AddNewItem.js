@@ -1,8 +1,11 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { toast, ToastContainer } from "react-toastify";
+import auth from "../../firebase.init";
 import "./AddNewItem.css";
 
 const AddNewItem = () => {
+  const [user] = useAuthState(auth);
   const handleNewItem = (event) => {
     event.preventDefault();
     const name = event.target.name.value;
@@ -16,6 +19,7 @@ const AddNewItem = () => {
     fetch("http://localhost:5000/Cars", {
       method: "POST",
       headers: {
+        authorization: `${user.email} ${localStorage.getItem("accessToken")}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify(newInfo),
