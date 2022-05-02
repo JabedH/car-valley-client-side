@@ -1,5 +1,5 @@
 import { async } from "@firebase/util";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Form } from "react-bootstrap";
 import {
   useSendPasswordResetEmail,
@@ -13,6 +13,7 @@ import "./Login.css";
 
 const Login = () => {
   const emailRef = useRef("");
+  const [logError, setLogError] = useState("");
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const [sendPasswordResetEmail, sending, error1] =
@@ -31,6 +32,15 @@ const Login = () => {
   if (user) {
     navigate(from, { replace: true });
   }
+  let ErrorHandle;
+
+  if (error) {
+    ErrorHandle = (
+      <div>
+        <p>your information didn't match</p>
+      </div>
+    );
+  }
 
   const handleReset = async () => {
     const email = emailRef.current.value;
@@ -38,6 +48,9 @@ const Login = () => {
     if (email) {
       await sendPasswordResetEmail(email);
       toast("sent reset email");
+    }
+    if (!email) {
+      setLogError("please put your correct email");
     } else {
       toast("please enter your email address");
     }
@@ -65,6 +78,10 @@ const Login = () => {
             <button className="w-100 btn-color mt-3" type="submit">
               Login
             </button>
+          </div>
+          <div className="text-center mt-2" style={{ color: "red" }}>
+            {logError}
+            {ErrorHandle}
           </div>
           <div className="text-center  mt-3">
             <Link
