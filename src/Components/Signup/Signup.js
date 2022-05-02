@@ -5,7 +5,7 @@ import {
   useCreateUserWithEmailAndPassword,
   useSendEmailVerification,
 } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import auth from "../../firebase.init";
 
@@ -15,6 +15,8 @@ const Signup = () => {
   const [sendEmailVerification, sending1, error1] =
     useSendEmailVerification(auth);
   const [newError, setNewError] = useState("");
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleSignup = async (event) => {
     event.preventDefault();
@@ -32,6 +34,10 @@ const Signup = () => {
       toast("Email verification has been sent");
     }
   };
+  let from = location.state?.from?.pathname || "/";
+  if (user) {
+    navigate(from, { replace: true });
+  }
   return (
     <div>
       <Form onSubmit={handleSignup} className="w-25 mx-auto text-start">
