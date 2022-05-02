@@ -27,9 +27,11 @@ const Signup = () => {
     await sendEmailVerification(email);
     if (password !== confirmPass) {
       setNewError("You password did not match");
+      return;
     }
     if (password.length < 6) {
       setNewError("password must be 6 characters or longer");
+      return;
     } else {
       toast("Email verification has been sent");
     }
@@ -69,7 +71,10 @@ const Signup = () => {
           placeholder="confirm Password"
           required
         />
-        {newError}
+        <div className="text-center mt-2" style={{ color: "red" }}>
+          {newError}
+        </div>
+
         <div className="login-btn">
           <button className="w-100 btn-color mt-3" type="submit">
             Sing Up
