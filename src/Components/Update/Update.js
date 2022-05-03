@@ -48,29 +48,45 @@ const Update = () => {
       body: JSON.stringify(newProduct),
     });
   }
-
-  const addQuantity = (event) => {
-    const newQuantity = parseInt(carInfo.quantity);
+  function incrise(event) {
     event.preventDefault();
-    const quantity = parseInt(event.target.number.value);
-    const totalQuantity = newQuantity + quantity;
-    const updatQuantity = { quantity };
-    console.log(typeof totalQuantity, typeof quantity, typeof newQuantity);
-
+    const getQuantity = Number(event.target.number.value);
+    const getCartValue = Number(carInfo.quantity);
+    console.log(typeof carInfo.quantity);
+    let newQuantity = getCartValue + getQuantity;
+    const newProduct = { ...product, quantity: newQuantity };
+    setProduct(newProduct);
     fetch(`http://localhost:5000/Cars/${updateId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(updatQuantity),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Success:", data);
-        alert("updatQuantity added successfully");
-        event.target.reset();
-      });
-  };
+      body: JSON.stringify(newProduct),
+    });
+  }
+
+  // const addQuantity = (event) => {
+  //   const newQuantity = parseInt(carInfo.quantity);
+  //   event.preventDefault();
+  //   const quantity = parseInt(event.target.number.value);
+  //   const totalQuantity = newQuantity + quantity;
+  //   const updatQuantity = { quantity };
+  //   console.log(typeof totalQuantity, typeof quantity, typeof newQuantity);
+
+  //   fetch(`http://localhost:5000/Cars/${updateId}`, {
+  //     method: "PUT",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(updatQuantity),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log("Success:", data);
+  //       alert("updatQuantity added successfully");
+  //       event.target.reset();
+  //     });
+  // };
 
   return (
     <div className="update container">
@@ -91,7 +107,7 @@ const Update = () => {
         </div>
         <div>
           <h3 className="text-center">Add Stock</h3>
-          <form onSubmit={addQuantity} className="quantity">
+          <form onSubmit={incrise} className="quantity">
             <input
               type="number"
               name="number"
