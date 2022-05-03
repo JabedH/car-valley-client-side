@@ -11,6 +11,7 @@ import useCar from "../../../Hooks/useCar";
 const CarDetails = () => {
   const [cars] = useCar();
   const newcars = cars.slice(0, 6);
+  console.log(newcars);
   const navigate = useNavigate();
   const handleUpdate = (id) => {
     console.log("clicked");
