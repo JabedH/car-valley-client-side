@@ -1,14 +1,15 @@
 import React from "react";
-import google from "../../img/icon/google.svg";
-import fb from "../../img/icon/fb.svg";
-import github from "../../img/icon/githiub.svg";
-import auth from "../../firebase.init";
+import google from "../../../img/icon/google.svg";
+import fb from "../../../img/icon/fb.svg";
+import github from "../../../img/icon/githiub.svg";
+
 import {
   useSignInWithFacebook,
   useSignInWithGithub,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
+import auth from "../../../firebase.init";
 
 const SocialLogin = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);

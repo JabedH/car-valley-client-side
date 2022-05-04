@@ -1,0 +1,34 @@
+.table-img img {
+  width: 100%;
+}
+.table-img {
+  width: 100px;
+  margin: 0 auto;
+}
+.delete {
+  width: 10px;
+  background-color: transparent;
+}
+.delete button {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+}
+.delete button:hover {
+  color: red;
+}
+.newItem {
+  display: flex;
+  justify-content: center;
+}
+.newItem a {
+  text-decoration: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  color: #03a4e0;
+}
+.newItem a:hover {
+  background-color: #03a4e0;
+  color: white;
+}

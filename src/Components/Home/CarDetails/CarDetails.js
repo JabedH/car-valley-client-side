@@ -15,7 +15,7 @@ const CarDetails = () => {
   const navigate = useNavigate();
   const handleUpdate = (id) => {
     console.log("clicked");
-    navigate(`/update/${id}`);
+    navigate(`/Inventory/${id}`);
   };
   return (
     <div className="container">

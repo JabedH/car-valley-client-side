@@ -9,15 +9,17 @@ import Services from "./Components/Services/Services";
 import Blog from "./Components/Blog/Blog";
 import ManageCars from "./Components/ManageCars/ManageCars";
 import MyCars from "./Components/MyCars/MyCars";
-import Login from "./Components/Login/Login";
-import Update from "./Components/Update/Update";
-import Inventory from "./Components/inventory/inventory";
+
 import AddNewItem from "./Components/AddNewItem/AddNewItem";
 import NotFound from "./Components/NotFound/NotFound";
 import "react-toastify/dist/ReactToastify.css";
-import Signup from "./Components/Signup/Signup";
+
 import ProtectedItem from "./Components/ProtectedItem/ProtectedItem";
 import AddItem from "./Components/AddItem/AddItem";
+import Signup from "./Components/Home/Signup/Signup";
+import Login from "./Components/Home/Login/Login";
+import DisplayAllItem from "./Components/DisplayAllItem/DisplayAllItem";
+import Inventory from "./Components/Inventory/Inventory";
 
 function App() {
   return (
@@ -25,7 +27,6 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-
         <Route path="/Reviews" element={<Reviews />} />
         <Route path="/Services" element={<Services />} />
         <Route path="/Blog" element={<Blog />} />
@@ -34,19 +35,19 @@ function App() {
         <Route path="/additem" element={<AddItem />} />
         <Route path="/login" element={<Login />} />
         <Route
-          path="/update/:updateId"
+          path="/Inventory/:updateId"
           element={
             <ProtectedItem>
               {" "}
-              <Update />{" "}
+              <Inventory />{" "}
             </ProtectedItem>
           }
         />
         <Route
-          path="/inventory"
+          path="/diaplyallitem"
           element={
             <ProtectedItem>
-              <Inventory />
+              <DisplayAllItem />
             </ProtectedItem>
           }
         ></Route>

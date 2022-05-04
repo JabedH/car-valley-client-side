@@ -7,9 +7,9 @@ import {
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
-import auth from "../../firebase.init";
-import Loading from "../Loading/Loading";
-import SocialLogin from "../SocialLogin/SoccialLogina";
+import auth from "../../../firebase.init";
+import Loading from "../../Loading/Loading";
+import SocialLogin from "../SocialLogin/SoccialLogin";
 import "./Login.css";
 
 const Login = () => {

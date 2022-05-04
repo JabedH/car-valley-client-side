@@ -1,71 +1,106 @@
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
-import { useMemo, useRef } from "react";
-import { Table } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import "./Inventory.css";
+import { Link, useParams } from "react-router-dom";
 import useCar from "../../Hooks/useCar";
-import "./inventory.css";
+import useCarDetails from "../../Hooks/useCarDetails";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import Loading from "../Loading/Loading";
+import { isDisabled } from "@testing-library/user-event/dist/utils";
+import { toast, ToastContainer } from "react-toastify";
 
 const Inventory = () => {
-  const [cars, setCars] = useCar();
-  const handleDelete = (id) => {
-    const confirmDelete = window.confirm("Are you want to delete?");
-    if (confirmDelete) {
-      const url = `http://localhost:5000/Cars/${id}`;
-      fetch(url, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.deletedCount > 0) {
-            const remaining = cars.filter((car) => car._id !== id);
-            setCars(remaining);
-          }
-        });
-    }
+  const [product, setProduct] = useState({});
+  const [loading] = useAuthState(auth);
+  const { updateId } = useParams();
+  const [carInfo, setCarInfo] = useCarDetails(updateId);
+  console.log(updateId);
+
+  // const removeOne = () => {
+  //   let newQuantity = parseInt(carInfo.quantity) - 1;
+  //   const newProduct = { ...carInfo.quantity, newQuantity };
+  //   console.log(newQuantity);
+  //   if (loading) {
+  //     return <Loading />;
+  //   }
+  //   fetch(`http://localhost:5000/Cars/${updateId}`, {
+  //     method: "PUT",
+  //     body: JSON.stringify(newQuantity),
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log("Success:", data);
+  //       toast("Added item successfully");
+  //     });
+  // };
+  function removeOne() {
+    let newQuantity = carInfo.quantity - 1;
+    const newProduct = { ...product, quantity: newQuantity };
+    setProduct(newProduct);
+    fetch(`http://localhost:5000/Cars/${updateId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newProduct),
+    });
+  }
+  const incrise = (event) => {
+    event.preventDefault();
+    const getQuantity = Number(event.target.number.value);
+    const getCartValue = Number(carInfo.quantity);
+    console.log(typeof carInfo.quantity);
+    let newQuantity = getCartValue + getQuantity;
+    const newProduct = { ...product, quantity: newQuantity };
+    setProduct(newProduct);
+    fetch(`http://localhost:5000/Cars/${updateId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newProduct),
+    });
   };
+
   return (
-    <div>
-      <div className="newItem mt-4">
-        <Link to="/addnewitem">Add New Item</Link>
+    <div className="update container">
+      <div className="sold-car">
+        <img src={carInfo.img} alt="" />
+        <h3>{carInfo.name}</h3>
+        <p>{carInfo.info}</p>
+        <p>${carInfo.price}</p>
+        <p>{carInfo.quantity === null ? 0 : carInfo.quantity}</p>
+        <p>Supplier name: {carInfo.supplier} </p>
+        <h5>Sold This Car</h5>
       </div>
-      <div className="container mt-4">
-        <h1 className="text-center">All Cars</h1>
-        <Table striped bordered hover>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Item name</th>
-              <th>Quantity</th>
-              <th>Price</th>
-              <th>Image</th>
-              <th>Delete</th>
-            </tr>
-          </thead>
-          <tbody>
-            {cars.map((car) => (
-              <tr key={car._id} className="table">
-                <td>#</td>
-                <td>{car.name}</td>
-                <td>{car.quantity === null ? 0 : car.quantity}</td>
-                <td>{car.price}</td>
-                <td>
-                  <div className="table-img">
-                    <img src={car.img} alt="" />
-                  </div>
-                </td>
-                <td className="delete">
-                  {" "}
-                  <button onClick={() => handleDelete(car._id)}>
-                    <FontAwesomeIcon icon={faTrash} />
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
+      <div className="deliver">
+        <div className="text-center deliver-car">
+          <h1>{carInfo.name}</h1>
+          <button onClick={() => removeOne(updateId)}> Button </button>
+          {/* <button onClick={() => removeOne(updateId)}>Delivered car</button> */}
+        </div>
+        <div>
+          <h3 className="text-center">Add Stock</h3>
+          <form onSubmit={incrise} className="quantity">
+            <input
+              type="number"
+              name="number"
+              onChange
+              required
+              // defaultValue="0"
+            />
+
+            <input type="submit" value="submit" />
+          </form>
+        </div>
+        <div className="manage-inventory">
+          <Link to="/diaplyallitem">Manage Inventory</Link>
+        </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

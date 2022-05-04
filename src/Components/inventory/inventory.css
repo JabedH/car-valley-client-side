@@ -1,34 +1,51 @@
-.table-img img {
-  width: 100%;
+*:focus {
+  outline: none;
 }
-.table-img {
-  width: 100px;
+.sold-car {
+  width: 80%;
   margin: 0 auto;
 }
-.delete {
-  width: 10px;
-  background-color: transparent;
+.sold-car img {
+  width: 100%;
 }
-.delete button {
+.submit {
+  width: 100%;
+  background-color: tomato;
+}
+/* deliver */
+.update {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+.deliver button {
   border: none;
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-}
-.delete button:hover {
-  color: red;
-}
-.newItem {
-  display: flex;
-  justify-content: center;
-}
-.newItem a {
-  text-decoration: none;
   padding: 10px;
-  border: 1px solid #ccc;
-  color: #03a4e0;
+  background-color: transparent;
+  border: 1px solid #03a4e0;
 }
-.newItem a:hover {
+.deliver button:hover {
   background-color: #03a4e0;
   color: white;
+}
+.quantity {
+  display: grid;
+  width: 50%;
+  margin: 0 auto;
+}
+/* manage-inventory */
+.manage-inventory a {
+  text-decoration: none;
+  border: 1px solid #03a4e0;
+  width: 150px;
+  text-align: center;
+  padding: 18px 5px;
+}
+.manage-inventory a:hover {
+  background-color: #03a4e0;
+  color: white;
+}
+.manage-inventory {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }
