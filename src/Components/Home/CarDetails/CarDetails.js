@@ -21,11 +21,6 @@ const CarDetails = () => {
     <div className="container">
       <h1 className="mt-5 mb-3 text-center">Recently Added</h1>
       <h5 className="mb-5 text-center">Car Valley premium cars inventory</h5>
-      <div className="car-inventory mb-4">
-        <Link className="inventory-link" to="/inventory">
-          Manage Inventory
-        </Link>
-      </div>
       <div className="car-details container">
         {newcars.map((car) => (
           <div key={car._id}>
@@ -70,7 +65,7 @@ const CarDetails = () => {
                 </div>
                 <div className="text-center">
                   <button onClick={() => handleUpdate(car._id)}>
-                    Update Car
+                    Stock Update
                   </button>
                   {/* <Link to="/update"></Link>{" "} */}
                 </div>
@@ -78,6 +73,11 @@ const CarDetails = () => {
             </Card>
           </div>
         ))}
+      </div>
+      <div className="car-inventory mb-4 mt-5">
+        <Link className="inventory-link" to="/manageinventories">
+          Manage Inventory
+        </Link>
       </div>
     </div>
   );

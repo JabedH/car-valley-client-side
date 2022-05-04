@@ -97,7 +97,7 @@ const Inventory = () => {
           </form>
         </div>
         <div className="manage-inventory">
-          <Link to="/diaplyallitem">Manage Inventory</Link>
+          <Link to="/manageinventories">Manage Inventory</Link>
         </div>
       </div>
       <ToastContainer />

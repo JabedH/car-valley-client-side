@@ -2,9 +2,9 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { toast, ToastContainer } from "react-toastify";
 import auth from "../../firebase.init";
-import "./AddNewItem.css";
+import "./MyItems.css";
 
-const AddNewItem = () => {
+const MyItems = () => {
   const [user] = useAuthState(auth);
   console.log(user.email);
   const handleNewItem = (event) => {
@@ -64,4 +64,4 @@ const AddNewItem = () => {
   );
 };
 
-export default AddNewItem;
+export default MyItems;

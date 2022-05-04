@@ -7,18 +7,16 @@ import Home from "./Components/Home/Home/Home";
 import Reviews from "./Components/Reviews/Reviews";
 import Services from "./Components/Services/Services";
 import Blog from "./Components/Blog/Blog";
-import ManageCars from "./Components/ManageCars/ManageCars";
-import MyCars from "./Components/MyCars/MyCars";
+import ManageItems from "./Components/Manage Items/ManageItems";
+import AddItem from "./Components/AddItem/AddItem";
 
-import AddNewItem from "./Components/AddNewItem/AddNewItem";
+import MyItems from "./Components/MyItems/MyItems";
 import NotFound from "./Components/NotFound/NotFound";
 import "react-toastify/dist/ReactToastify.css";
-
 import ProtectedItem from "./Components/ProtectedItem/ProtectedItem";
-import AddItem from "./Components/AddItem/AddItem";
 import Signup from "./Components/Home/Signup/Signup";
 import Login from "./Components/Home/Login/Login";
-import DisplayAllItem from "./Components/DisplayAllItem/DisplayAllItem";
+import ManageInventories from "./Components/ManageInventories/ManageInventories";
 import Inventory from "./Components/Inventory/Inventory";
 
 function App() {
@@ -30,9 +28,9 @@ function App() {
         <Route path="/Reviews" element={<Reviews />} />
         <Route path="/Services" element={<Services />} />
         <Route path="/Blog" element={<Blog />} />
-        <Route path="/ManageCars" element={<ManageCars />} />
-        <Route path="/MyCars" element={<MyCars />} />
+        <Route path="/ManageItems" element={<ManageItems />} />
         <Route path="/additem" element={<AddItem />} />
+        <Route path="/myitems" element={<MyItems />} />
         <Route path="/login" element={<Login />} />
         <Route
           path="/Inventory/:updateId"
@@ -44,19 +42,19 @@ function App() {
           }
         />
         <Route
-          path="/diaplyallitem"
+          path="/manageinventories"
           element={
             <ProtectedItem>
-              <DisplayAllItem />
+              <ManageInventories />
             </ProtectedItem>
           }
         ></Route>
 
         <Route
-          path="/addnewitem"
+          path="/MyItems"
           element={
             <ProtectedItem>
-              <AddNewItem />
+              <MyItems />
             </ProtectedItem>
           }
         ></Route>

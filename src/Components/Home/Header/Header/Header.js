@@ -28,9 +28,9 @@ const Header = () => {
                 <Link to="Reviews">Reviews</Link>
                 <Link to="Services">Services</Link>
                 <Link to="Blog"> Blog</Link>
-                {user ? <Link to="ManageCars">Manage Cars</Link> : ""}
-                {user ? <Link to="MyCars">My Cars</Link> : ""}
-                {user ? <Link to="additem">Add Item</Link> : ""}
+                {user ? <Link to="ManageItems">Manage Cars</Link> : ""}
+                {user ? <Link to="AddItem">Add Item</Link> : ""}
+                {user ? <Link to="myitems">My Items</Link> : ""}
                 {user ? (
                   <Link onClick={() => handleLogout()} to="/">
                     Logout

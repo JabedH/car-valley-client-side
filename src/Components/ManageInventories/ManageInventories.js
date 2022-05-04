@@ -5,9 +5,9 @@ import { useMemo, useRef } from "react";
 import { Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import useCar from "../../Hooks/useCar";
-import "./DisplayAllItem.css";
+import "./ManageInventories.css";
 
-const DisplayAllItem = () => {
+const ManageInventories = () => {
   const [cars, setCars] = useCar();
   const handleDelete = (id) => {
     const confirmDelete = window.confirm("Are you want to delete?");
@@ -28,7 +28,7 @@ const DisplayAllItem = () => {
   return (
     <div>
       <div className="newItem mt-4">
-        <Link to="/addnewitem">Add New Item</Link>
+        <Link to="/MyItems">Add New Item</Link>
       </div>
       <div className="container mt-4">
         <h1 className="text-center">All Cars</h1>
@@ -70,4 +70,4 @@ const DisplayAllItem = () => {
   );
 };
 
-export default DisplayAllItem;
+export default ManageInventories;
