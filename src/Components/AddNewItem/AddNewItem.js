@@ -2,11 +2,11 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { toast, ToastContainer } from "react-toastify";
 import auth from "../../firebase.init";
-import "./MyItems.css";
+import "./AddNewItem.css";
 
-const MyItems = () => {
+const AddNewItem = () => {
   const [user] = useAuthState(auth);
-  console.log(user.email);
+  console.log(user?.email);
   const handleNewItem = (event) => {
     event.preventDefault();
     const name = event.target.name.value;
@@ -64,4 +64,4 @@ const MyItems = () => {
   );
 };
 
-export default MyItems;
+export default AddNewItem;

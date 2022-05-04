@@ -1,23 +1,49 @@
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
+import useCar from "../../Hooks/useCar";
 import "./MyItems.css";
 
 const MyItems = () => {
   const [user] = useAuthState(auth);
-  const [getcar, setGetcar] = useState([]);
+  const [getCar, setGetcar] = useState([]);
+  console.log(getCar);
   useEffect(() => {
-    fetch("http://localhost:5000/addcar", {
-      headers: {
-        authorization: `${user?.email} ${localStorage.getItem("accessToken")}`,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => setGetcar(data));
-  }, [user?.email]);
+    const email = user?.email;
+    const getItem = async () => {
+      const url = `http://localhost:5000/addcar?email=${email}`;
+      console.log(email);
+      const { data } = await axios.get(url, {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      });
+      setGetcar(data);
+    };
+    getItem();
+  }, [user]);
+  const handleDeleteOne = (id) => {
+    console.log(id);
+    const confirmDelete = window.confirm("Are you want to delete?");
+    if (confirmDelete) {
+      const url = `http://localhost:5000/addCar/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            const remaining = getCar.filter((car) => car._id !== id);
+            setGetcar(remaining);
+          }
+        });
+    }
+  };
   return (
     <div>
       <div>
@@ -34,7 +60,7 @@ const MyItems = () => {
               </tr>
             </thead>
             <tbody>
-              {getcar.map((car) => (
+              {getCar.map((car) => (
                 <tr key={car._id} className="table">
                   <td>#</td>
                   <td>{car.name}</td>
@@ -45,6 +71,12 @@ const MyItems = () => {
                       <img src={car.img} alt="" />
                     </div>
                   </td>
+                  <td className="delete">
+                    {" "}
+                    <button onClick={() => handleDeleteOne(car._id)}>
+                      <FontAwesomeIcon icon={faTrash} />
+                    </button>
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -53,6 +85,39 @@ const MyItems = () => {
       </div>
     </div>
   );
+  // useEffect(() => {
+  //   const getItem = async () => {
+  //     const url = "http://localhost:5000/addcar";
+  //     console.log();
+  //     const { data } = await axios.get(url, {
+  //       headers: {
+  //         authorization: `${user?.email} ${localStorage.getItem(
+  //           "accessToken"
+  //         )}`,
+  //       },
+  //     });
+  //     setGetcar(data);
+
+  //     // .then((res) => res.json())
+  //     // .then((data) => setGetcar(data));
+  //   };
+  //   getItem();
+  // }, [user?.email]);
+  // const handleDelete = (id) => {
+  //   const confirmDelete = window.confirm("Are you want to delete?");
+  //   if (confirmDelete) {
+  //     const url = `http://localhost:5000/Cars/${id}`;
+  //     fetch(url, {
+  //       method: "DELETE",
+  //     })
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         if (data.deletedCount > 0) {
+  //           const remaining = getCar.filter((car) => car._id !== id);
+  //           setGetcar(remaining);
+  //         }
+  //       });
+  //   }
 };
 
 export default MyItems;

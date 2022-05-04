@@ -1,4 +1,5 @@
 import { async } from "@firebase/util";
+import axios from "axios";
 import React, { useRef, useState } from "react";
 import { Form } from "react-bootstrap";
 import {
@@ -23,11 +24,14 @@ const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const Handlelogin = (event) => {
+  const Handlelogin = async (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
-    signInWithEmailAndPassword(email, password);
+    await signInWithEmailAndPassword(email, password);
+    const { data } = await axios.post("http://localhost:5000/login", { email });
+    localStorage.setItem("accessToken", data.token);
+    navigate(from, { replace: true });
   };
   if (loading) {
     return <Loading />;
@@ -35,22 +39,22 @@ const Login = () => {
   let from = location.state?.from?.pathname || "/";
   console.log(user?.user?.email);
   console.log(user?.email);
-  if (user) {
-    fetch("http://localhost:5000/login", {
-      method: "POST",
-      body: JSON.stringify({
-        email: user?.user?.email,
-      }),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        localStorage.setItem("accessToken", data.token);
-        navigate(from, { replace: true });
-      });
-  }
+  // if (user) {
+  //   fetch("http://localhost:5000/login", {
+  //     method: "POST",
+  //     body: JSON.stringify({
+  //       email: user?.user?.email,
+  //     }),
+  //     headers: {
+  //       "Content-type": "application/json; charset=UTF-8",
+  //     },
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       localStorage.setItem("accessToken", data.token);
+  //       navigate(from, { replace: true });
+  //     });
+  // }
   let ErrorHandle;
 
   if (error) {

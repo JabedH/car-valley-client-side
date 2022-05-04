@@ -28,7 +28,7 @@ const ManageInventories = () => {
   return (
     <div>
       <div className="newItem mt-4">
-        <Link to="/MyItems">Add New Item</Link>
+        <Link to="/addnewitem">Add New Item</Link>
       </div>
       <div className="container mt-4">
         <h1 className="text-center">All Cars</h1>

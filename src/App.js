@@ -18,6 +18,7 @@ import Signup from "./Components/Home/Signup/Signup";
 import Login from "./Components/Home/Login/Login";
 import ManageInventories from "./Components/ManageInventories/ManageInventories";
 import Inventory from "./Components/Inventory/Inventory";
+import AddNewItem from "./Components/AddNewItem/AddNewItem";
 
 function App() {
   return (
@@ -59,6 +60,7 @@ function App() {
           }
         ></Route>
         <Route path="/Singup" element={<Signup />} />
+        <Route path="/addnewitem" element={<AddNewItem />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
