@@ -19,10 +19,6 @@ const SocialLogin = () => {
   const location = useLocation();
   const navigate = useNavigate();
   let from = location.state?.from?.pathname || "/";
-  // if (user) {
-  //   console.log(user);
-  //   navigate(from, { replace: true });
-  // }
   console.log(user?.user?.email);
   if (user) {
     fetch("http://localhost:5000/login", {

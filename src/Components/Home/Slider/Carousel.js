@@ -1,4 +1,5 @@
 import React from "react";
+import "./Carousel";
 import { Carousel } from "react-bootstrap";
 import bg1 from "../../../img/bg/bg3.jpg";
 import bg2 from "../../../img/bg/bg2.jpg";
@@ -6,31 +7,29 @@ import bg3 from "../../../img/bg/bg5.jpg";
 
 const Slider = () => {
   return (
-    <div>
+    <div className="carousel">
       <Carousel>
         <Carousel.Item>
           <img className="d-block w-100" src={bg1} alt="First slide" />
           <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h3>FIND THE BEST CAR FOR YOU</h3>
+            <p>ULTIMATE HORSE ON TRACK</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img className="d-block w-100" src={bg2} alt="Second slide" />
 
           <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>YOUR DREAM IS HERE</h3>
+            <p>CHOOSE YOUR DREAM</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img className="d-block w-100" src={bg3} alt="Third slide" />
 
           <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
+            <h3>CARS MAKE YOU WILL HAPPY</h3>
+            <p>CHOOSE YOUR HAPPINESS AND SPREAD IT EVERYWHERE.</p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

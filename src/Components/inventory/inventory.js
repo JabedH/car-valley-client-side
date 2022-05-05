@@ -1,58 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Inventory.css";
 import { Link, useParams } from "react-router-dom";
-import useCar from "../../Hooks/useCar";
 import useCarDetails from "../../Hooks/useCarDetails";
-import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../../firebase.init";
-import Loading from "../Loading/Loading";
-import { isDisabled } from "@testing-library/user-event/dist/utils";
-import { toast, ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 
 const Inventory = () => {
   const [product, setProduct] = useState({});
-  const [loading] = useAuthState(auth);
   const { updateId } = useParams();
-  const [carInfo, setCarInfo] = useCarDetails(updateId);
-  console.log(updateId);
-
-  // const removeOne = () => {
-  //   let newQuantity = parseInt(carInfo.quantity) - 1;
-  //   const newProduct = { ...carInfo.quantity, newQuantity };
-  //   console.log(newQuantity);
-  //   if (loading) {
-  //     return <Loading />;
-  //   }
-  //   fetch(`http://localhost:5000/Cars/${updateId}`, {
-  //     method: "PUT",
-  //     body: JSON.stringify(newQuantity),
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       console.log("Success:", data);
-  //       toast("Added item successfully");
-  //     });
-  // };
-  function removeOne() {
+  // const [carInfo] = useCarDetails(updateId);
+  const [carInfo, setCarInfo] = useState({ updateId });
+  useEffect(() => {
+    const url = `http://localhost:5000/Cars/${updateId}`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setCarInfo(data));
+  }, [setCarInfo]);
+  const removeOne = (event) => {
+    // event.preventDefault();
     let newQuantity = carInfo.quantity - 1;
     const newProduct = { ...product, quantity: newQuantity };
-    setProduct(newProduct);
+    setProduct(newProduct.quantity);
     fetch(`http://localhost:5000/Cars/${updateId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(newProduct),
+      body: JSON.stringify({ newProduct }),
     });
-  }
+  };
   const incrise = (event) => {
     event.preventDefault();
     const getQuantity = Number(event.target.number.value);
     const getCartValue = Number(carInfo.quantity);
-    console.log(typeof carInfo.quantity);
     let newQuantity = getCartValue + getQuantity;
     const newProduct = { ...product, quantity: newQuantity };
     setProduct(newProduct);
@@ -64,7 +43,6 @@ const Inventory = () => {
       body: JSON.stringify(newProduct),
     });
   };
-
   return (
     <div className="update container">
       <div className="sold-car">
@@ -88,7 +66,6 @@ const Inventory = () => {
             <input
               type="number"
               name="number"
-              onChange
               required
               // defaultValue="0"
             />

@@ -13,9 +13,9 @@ const Header = () => {
     signOut(auth);
   };
   return (
-    <div>
-      <Navbar bg="light" expand="lg">
-        <Container className="mt-3 mb-3">
+    <>
+      <Navbar sticky="top" className="navbar" expand="lg">
+        <Container className="mt-3 mb-3 ">
           <Navbar.Brand as={Link} to="/" className="logo">
             {" "}
             CAR VALLEY{" "}
@@ -24,16 +24,16 @@ const Header = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto nav">
-                <Link to="/">home</Link>
-                <Link to="Reviews">Reviews</Link>
-                <Link to="Services">Services</Link>
-                <Link to="Blog"> Blog</Link>
-                {user ? <Link to="ManageItems">Manage Cars</Link> : ""}
-                {user ? <Link to="AddItem">Add Item</Link> : ""}
-                {user ? <Link to="myitems">My Items</Link> : ""}
+                <Link to="/">HOME</Link>
+                <Link to="Reviews">REVIEWS</Link>
+                <Link to="Services">SERVICES</Link>
+                <Link to="Blog"> BLOG</Link>
+                {user ? <Link to="ManageItems"> MANAGE ITEM</Link> : ""}
+                {user ? <Link to="AddItem">ADD ITEM</Link> : ""}
+                {user ? <Link to="myitems">MY ITEMS</Link> : ""}
                 {user ? (
                   <Link onClick={() => handleLogout()} to="/">
-                    Logout
+                    LOGOUT
                   </Link>
                 ) : (
                   <Link to="Login">Login</Link>
@@ -43,7 +43,7 @@ const Header = () => {
           </div>
         </Container>
       </Navbar>
-    </div>
+    </>
   );
 };
 

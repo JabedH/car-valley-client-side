@@ -1,6 +1,8 @@
 .logo {
   display: flex;
-  font-weight: 500;
+  font-weight: 800;
+  font-size: 30px;
+  margin: -30px 0;
 }
 .nav a {
   margin-left: 20px;
@@ -8,4 +10,7 @@
   font-size: 18px;
   font-weight: bold;
   color: rgb(71 85 105);
+}
+.navbar {
+  background-color: rgba(255, 255, 255, 0.705);
 }
