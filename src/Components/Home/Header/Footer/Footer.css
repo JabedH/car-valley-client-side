@@ -1,0 +1,32 @@
+.social-icon img {
+  width: 30px;
+  margin-left: 10px;
+}
+.social-icon button {
+  background-color: transparent;
+  border: none;
+}
+
+.address {
+  background-color: #272a30;
+  color: white;
+}
+.footer-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  justify-items: center;
+  gap: 50px;
+}
+.footer-info li {
+  color: #ccc;
+}
+.user-icon img {
+  width: 50px;
+}
+.money-icon {
+  background-image: url("../../../../img/cars/new1.png");
+  width: 100%;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

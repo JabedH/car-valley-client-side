@@ -3,7 +3,12 @@ import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import "./CarDetails.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleCheck, faStar } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCircleCheck,
+  faFunnelDollar,
+  faGasPump,
+  faStar,
+} from "@fortawesome/free-solid-svg-icons";
 import Rating from "react-rating";
 import { Link, useNavigate } from "react-router-dom";
 import useCar from "../../../Hooks/useCar";
@@ -37,6 +42,9 @@ const CarDetails = () => {
                 <p>
                   <b>Supplier</b>{" "}
                   <span style={{ color: "#03A4E0" }}>{car.supplier}</span>
+                  <div>
+                    <FontAwesomeIcon icon={faGasPump} />
+                  </div>
                 </p>
                 <Card.Text>{car.info}</Card.Text>
                 <h3 className="price">${car.price}</h3>
