@@ -6,7 +6,9 @@
     "price": "24,800",
     "quantity": "8",
     "supplier": "Jabed H",
-    "ratting": "5"
+    "ratting": "5",
+    "Fuel": "Petrol",
+    "use": "New"
   },
   {
     "name": "Mazda MAZDA6",
@@ -15,7 +17,9 @@
     "price": "26,900",
     "quantity": "5",
     "supplier": "Elon Jack",
-    "ratting": "4"
+    "ratting": "4",
+    "Fuel": "Petrol/Gas",
+    "use": "New"
   },
   {
     "name": "Volvo S80",
@@ -24,7 +28,9 @@
     "price": "44,500",
     "quantity": "3",
     "supplier": "Jeff Robert",
-    "ratting": "4.5"
+    "ratting": "4.5",
+    "Fuel": "Petrol",
+    "use": "Used"
   },
   {
     "name": "BMW M4",
@@ -33,7 +39,9 @@
     "price": "36,000",
     "quantity": "6",
     "supplier": "Larry Jack",
-    "ratting": "4.8"
+    "ratting": "4.8",
+    "Fuel": "Electric",
+    "use": "New"
   },
   {
     "name": "Audi A4",
@@ -42,7 +50,9 @@
     "price": "28,900",
     "quantity": "9",
     "supplier": "Steve Jacob",
-    "ratting": "5"
+    "ratting": "5",
+    "Fuel": "Petrol/Gas",
+    "use": "New"
   },
   {
     "name": "Toyota Yaris",
@@ -51,6 +61,8 @@
     "price": "22,800",
     "quantity": "10",
     "supplier": "Mark John",
-    "ratting": "4.1"
+    "ratting": "4.1",
+    "Fuel": "Petrol",
+    "use": "Used"
   }
 ]

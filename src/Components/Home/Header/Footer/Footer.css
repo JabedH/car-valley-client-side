@@ -20,13 +20,35 @@
 .footer-info li {
   color: #ccc;
 }
+.user-icon {
+  background-color: rgba(0, 0, 0, 0.637);
+}
 .user-icon img {
-  width: 50px;
+  width: 20%;
 }
 .money-icon {
-  background-image: url("../../../../img/cars/new1.png");
+  background-image: url("../../../../img/cars/4.jpg");
   width: 100%;
+  height: 20%;
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.all-car-icon {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  justify-items: center;
+}
+.icon-center {
+  display: grid;
+  justify-items: center;
+  margin-top: 20px;
+  color: white;
+}
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: black;
+  color: white;
 }

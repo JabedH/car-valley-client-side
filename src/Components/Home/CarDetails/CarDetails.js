@@ -4,6 +4,7 @@ import { Card } from "react-bootstrap";
 import "./CarDetails.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faCar,
   faCircleCheck,
   faFunnelDollar,
   faGasPump,
@@ -39,13 +40,26 @@ const CarDetails = () => {
               </div>
               <Card.Body>
                 <Card.Title>{car.name}</Card.Title>
-                <p>
-                  <b>Supplier</b>{" "}
-                  <span style={{ color: "#03A4E0" }}>{car.supplier}</span>
+
+                <div className="d-flex">
                   <div>
-                    <FontAwesomeIcon icon={faGasPump} />
+                    <b>Supplier</b>{" "}
+                    <span style={{ color: "#03A4E0" }}>{car.supplier}</span>
                   </div>
-                </p>
+                  <div className="d-flex">
+                    <div>
+                      <FontAwesomeIcon icon={faGasPump} />
+                    </div>
+                    <p>{car.Fuel}</p>
+                  </div>
+                  <div className="d-flex">
+                    <div>
+                      <FontAwesomeIcon icon={faCar} />
+                    </div>
+                    <p className="ml-5">{car.use}</p>
+                  </div>
+                </div>
+
                 <Card.Text>{car.info}</Card.Text>
                 <h3 className="price">${car.price}</h3>
                 <div className="main-icon">

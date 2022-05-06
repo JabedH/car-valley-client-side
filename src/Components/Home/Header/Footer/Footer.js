@@ -20,27 +20,37 @@ import {
 
 const Footer = () => {
   return (
-    <div className="">
-      <div className="">
-        <div className="money-icon">
-          <div className="container user-icon">
-            <div>
-              <img src={man} alt="" />
-            </div>
-            <div>
-              <img src={car} alt="" />
-            </div>
-            <div>
-              <img src={money} alt="" />
-            </div>
-            <div>
-              <img src={location} alt="" />
+    <div>
+      <div>
+        <div className="money-icon ">
+          <div className=" user-icon">
+            <div className="container all-car-icon">
+              <div className="icon-center">
+                <img src={man} alt="" />
+                <h3>100%</h3>
+                <p>Customer Satisfaction</p>
+              </div>
+              <div className="icon-center">
+                <img src={car} alt="" />
+                <h3>2100</h3>
+                <p>Cars Sold</p>
+              </div>
+              <div className="icon-center">
+                <img src={money} alt="" />
+                <h3>$950,000</h3>
+                <p>Amount Sold</p>
+              </div>
+              <div className="icon-center">
+                <img src={location} alt="" />
+                <h3>7</h3>
+                <p>Locations</p>
+              </div>
             </div>
           </div>
         </div>
         <div className="address">
           <div className="footer-info container">
-            <div className="mt-5">
+            <div className="mt-4 mb-3">
               <h3>Address</h3>
               <ul>
                 <li>811 7th Ave</li>
@@ -48,7 +58,7 @@ const Footer = () => {
                 <li>United States</li>
               </ul>
             </div>
-            <div className="mt-5">
+            <div className="mt-4 mb-3">
               <h3>Information</h3>
               <ul>
                 <li>About Us</li>
@@ -56,7 +66,7 @@ const Footer = () => {
                 <li>FAQ</li>
               </ul>
             </div>
-            <div className="mt-5">
+            <div className="mt-4 mb-3">
               <h3>Opening Hours</h3>
 
               <ul>
@@ -64,7 +74,7 @@ const Footer = () => {
                 <li>Sunday is closed</li>
               </ul>
             </div>
-            <div className="connect mt-5">
+            <div className="connect mt-4 mb-3">
               <h3>Connect With Us</h3>
 
               <div className="social-icon">
@@ -86,6 +96,9 @@ const Footer = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="footer">
+          Copyright CAR VALLEY ©2022. All Rights Reserved
         </div>
       </div>
       <div></div>
