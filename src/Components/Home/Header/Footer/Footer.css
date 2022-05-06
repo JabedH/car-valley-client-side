@@ -52,3 +52,12 @@
   background-color: black;
   color: white;
 }
+/* responsive */
+@media only screen and (max-width: 480px) {
+  .all-car-icon {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    justify-items: center;
+    gap: 20px;
+  }
+}

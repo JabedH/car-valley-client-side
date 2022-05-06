@@ -4,8 +4,7 @@ import "./App.css";
 
 import Header from "./Components/Home/Header/Header/Header";
 import Home from "./Components/Home/Home/Home";
-import Reviews from "./Components/Reviews/Reviews";
-import Services from "./Components/Services/Services";
+
 import Blog from "./Components/Blog/Blog";
 import ManageItems from "./Components/Manage Items/ManageItems";
 import AddItem from "./Components/AddItem/AddItem";
@@ -26,8 +25,6 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Reviews" element={<Reviews />} />
-        <Route path="/Services" element={<Services />} />
         <Route path="/Blog" element={<Blog />} />
         <Route path="/ManageItems" element={<ManageItems />} />
         <Route path="/additem" element={<AddItem />} />

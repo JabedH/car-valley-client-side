@@ -1,6 +1,7 @@
 .mission {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
   gap: 50px;
   margin-top: 80px;
   margin-bottom: 50px;
@@ -20,4 +21,22 @@
 .full-mission {
   display: grid;
   align-items: center;
+}
+
+/* responsive */
+@media only screen and (max-width: 480px) {
+  .mission {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .mission p {
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+  }
+  .mission h3 {
+    text-align: center;
+    padding: 20px;
+  }
 }

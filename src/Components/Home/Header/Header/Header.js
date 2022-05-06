@@ -25,8 +25,6 @@ const Header = () => {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto nav">
                 <Link to="/">HOME</Link>
-                <Link to="Reviews">REVIEWS</Link>
-                <Link to="Services">SERVICES</Link>
                 <Link to="Blog"> BLOG</Link>
                 {user ? <Link to="ManageItems"> MANAGE ITEM</Link> : ""}
                 {user ? <Link to="AddItem">ADD ITEM</Link> : ""}
@@ -36,7 +34,7 @@ const Header = () => {
                     LOGOUT
                   </Link>
                 ) : (
-                  <Link to="Login">Login</Link>
+                  <Link to="Login">LOGIN</Link>
                 )}
               </Nav>
             </Navbar.Collapse>

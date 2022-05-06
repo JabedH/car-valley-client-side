@@ -35,6 +35,17 @@
 .full-car img:hover {
   transform: scale(1.1);
 }
+.car-name {
+  font-weight: 700;
+}
+.car-supplier {
+  display: flex;
+  justify-content: space-between;
+  color: rgb(71, 71, 71);
+}
+.icon-margin {
+  margin-right: 5px;
+}
 .car-inventory {
   display: flex;
   justify-content: center;
@@ -58,9 +69,13 @@
   margin-left: 5px;
 }
 .price {
-  color: red;
+  color: rgb(100 116 139);
+  font-weight: 700;
 }
 .main-icon {
   display: flex;
   justify-content: space-between;
+}
+.line {
+  border: 1px solid #ccc;
 }

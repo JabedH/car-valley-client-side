@@ -14,8 +14,12 @@
 }
 /* deliver */
 .update {
+  margin-top: 50px;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 2fr 1.5fr;
+}
+.my-car-info {
+  text-align: start;
 }
 .deliver button {
   border: none;
@@ -28,24 +32,40 @@
   color: white;
 }
 .quantity {
-  display: grid;
-  width: 50%;
-  margin: 0 auto;
+  display: flex;
+  margin-left: 20px;
 }
+.quantity input {
+  padding: 9px;
+}
+.car-Delivery {
+  display: flex;
+}
+
 /* manage-inventory */
 .manage-inventory a {
   text-decoration: none;
-  border: 1px solid #03a4e0;
-  width: 150px;
+  background-color: #03a4e0;
+  color: white;
+  width: 100%;
   text-align: center;
   padding: 18px 5px;
 }
 .manage-inventory a:hover {
-  background-color: #03a4e0;
+  background-color: #01bbff;
   color: white;
 }
 .manage-inventory {
   display: flex;
   justify-content: center;
   margin-top: 30px;
+}
+/* responsive */
+@media only screen and (max-width: 480px) {
+  .update {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
 }
