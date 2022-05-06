@@ -35,20 +35,21 @@ const ManageInventories = () => {
         <Table striped bordered hover>
           <thead>
             <tr>
-              <th>#</th>
+              {/* <th>#</th> */}
               <th>Item name</th>
-              <th>Quantity</th>
+              {/* <th>Quantity</th> */}
               <th>Price</th>
               <th>Image</th>
+
               <th>Delete</th>
             </tr>
           </thead>
           <tbody>
             {cars.map((car) => (
               <tr key={car._id} className="table">
-                <td>#</td>
+                {/* <td>{cars.length}</td> */}
                 <td>{car.name}</td>
-                <td>{car.quantity === null ? 0 : car.quantity}</td>
+                {/* <td>{car.quantity === null ? 0 : car.quantity}</td> */}
                 <td>{car.price}</td>
                 <td>
                   <div className="table-img">

@@ -1,4 +1,5 @@
 import React from "react";
+import "./SocialLogin.css";
 import google from "../../../img/icon/google.svg";
 import fb from "../../../img/icon/fb.svg";
 import github from "../../../img/icon/githiub.svg";
@@ -37,9 +38,9 @@ const SocialLogin = () => {
       });
   }
   return (
-    <div onClick={() => signInWithGoogle()} className="social-icon">
+    <div onClick={() => signInWithGoogle()} className="login-social-icon">
       <button>
-        <img src={google} alt="" />
+        <img className="login-icon" src={google} alt="" />
       </button>
       <button>
         <img onClick={() => signInWithFacebook()} src={fb} alt="" />

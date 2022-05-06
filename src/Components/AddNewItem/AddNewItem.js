@@ -47,7 +47,7 @@ const AddNewItem = () => {
           <label htmlFor="">Name</label>
           <input name="name" type="text" required />
           <label htmlFor="">Img Url</label>
-          <input name="img" type="text" placeholder="Img Url" required />
+          <input name="img" type="text" required />
           <label htmlFor="">Price</label>
           <input name="price" type="text" required />
           <label htmlFor="">Quantity</label>

@@ -38,3 +38,10 @@
   background-color: #03a4e0;
   color: white;
 }
+@media only screen and (max-width: 480px) {
+  .carinfo {
+    display: grid;
+    width: 90%;
+    margin: 0 auto;
+  }
+}

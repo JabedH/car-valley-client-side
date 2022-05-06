@@ -80,8 +80,8 @@ const Login = () => {
   };
   return (
     <div>
-      <div>
-        <Form onSubmit={Handlelogin} className="w-25 mx-auto text-start">
+      <div className="mt-5 all-login mx-auto">
+        <Form onSubmit={Handlelogin} className="mx-auto text-start">
           <input
             ref={emailRef}
             name="email"
@@ -120,7 +120,13 @@ const Login = () => {
               Don't have any account?
             </Link>
           </div>
+          <div className="social-lin ">
+            <dir className="or-line"></dir>
+            <p>or</p>
+            <dir className="or-line"></dir>
+          </div>
         </Form>
+
         <div className="social-login ">
           <SocialLogin />
           <ToastContainer />

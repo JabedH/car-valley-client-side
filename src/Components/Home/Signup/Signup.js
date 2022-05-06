@@ -8,6 +8,7 @@ import {
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import auth from "../../../firebase.init";
+import SocialLogin from "../SocialLogin/SoccialLogin";
 
 const Signup = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -41,8 +42,8 @@ const Signup = () => {
     navigate(from, { replace: true });
   }
   return (
-    <div>
-      <Form onSubmit={handleSignup} className="w-25 mx-auto text-start">
+    <div className="mt-5 all-login mx-auto">
+      <Form onSubmit={handleSignup} className=" mx-auto text-start">
         <input
           name="name"
           className="w-100 mt-3"
@@ -85,8 +86,16 @@ const Signup = () => {
             Already you have an account?
           </Link>
         </div>
+        <div className="social-lin ">
+          <dir className="or-line"></dir>
+          <p>or</p>
+          <dir className="or-line"></dir>
+        </div>
       </Form>
-      <ToastContainer />
+      <div className="social-login ">
+        <SocialLogin />
+        <ToastContainer />
+      </div>
     </div>
   );
 };

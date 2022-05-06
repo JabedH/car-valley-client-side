@@ -1,0 +1,15 @@
+.login-social-icon button {
+  border: 0;
+  background-color: transparent;
+}
+.login-social-icon img {
+  padding: 5px;
+  background-color: rgb(240, 237, 237);
+  border-radius: 10px;
+}
+.login-social-icon img:hover {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.login-social-icon {
+  display: flex;
+}

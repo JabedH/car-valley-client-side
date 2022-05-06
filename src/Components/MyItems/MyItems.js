@@ -52,7 +52,7 @@ const MyItems = () => {
           <Table striped bordered hover>
             <thead>
               <tr>
-                <th>#</th>
+                {/* <th>#</th> */}
                 <th>Item name</th>
                 <th>Quantity</th>
                 <th>Price</th>
@@ -64,7 +64,7 @@ const MyItems = () => {
                 <tr key={car._id} className="table">
                   <td>#</td>
                   <td>{car.name}</td>
-                  <td>{car.quantity === null ? 0 : car.quantity}</td>
+                  {/* <td>{car.quantity === null ? 0 : car.quantity}</td> */}
                   <td>{car.price}</td>
                   <td>
                     <div className="table-img">

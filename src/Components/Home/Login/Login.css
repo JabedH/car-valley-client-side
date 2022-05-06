@@ -1,6 +1,13 @@
 *:focus {
   outline: none;
 }
+.all-login {
+  width: 400px;
+  margin-top: 150px;
+  padding: 0 10px 10px 10px;
+  border: 1px solid #fed134;
+  background-color: rgba(255, 255, 255, 0.103);
+}
 .btn-color {
   background-color: transparent;
   border: none;
@@ -20,6 +27,7 @@
   font-weight: 500;
 }
 .text-start {
+  width: 100%;
 }
 .text-start input {
   background-color: rgb(235, 235, 235);
@@ -32,4 +40,27 @@
 .social-login {
   display: flex;
   justify-content: center;
+}
+.social-lin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.social-lin p {
+  color: black;
+  margin-top: 10px;
+  padding: 0 10px;
+}
+.or-line {
+  border: 1px solid #ccc;
+  width: 50%;
+}
+/* responsive */
+@media only screen and (max-width: 480px) {
+  .text-start {
+    width: 80%;
+  }
+  .all-login {
+    width: 90%;
+  }
 }
