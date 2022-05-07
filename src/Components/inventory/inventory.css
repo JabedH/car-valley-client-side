@@ -41,7 +41,10 @@
 .car-Delivery {
   display: flex;
 }
-
+.myForm-control {
+  display: grid;
+  justify-items: start;
+}
 /* manage-inventory */
 .manage-inventory a {
   text-decoration: none;

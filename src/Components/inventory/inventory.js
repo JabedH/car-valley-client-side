@@ -9,7 +9,8 @@ const Inventory = () => {
   const { updateId } = useParams();
   const [carInfo, setCarInfo] = useState({});
   const { name, info, price, supplier, quantity, img } = carInfo;
-  const [getValue, setGetValue] = useState(null);
+  const [error, setError] = useState(" ");
+
   useEffect(() => {
     const url = `http://localhost:5000/Cars/${updateId}`;
     fetch(url)
@@ -31,28 +32,34 @@ const Inventory = () => {
     });
   };
 
-  const getInputValu = (event) => {
-    const getQuantity = parseInt(event.target.number.value);
-    setGetValue(getQuantity);
-    console.log(getQuantity);
-  };
+  // const getInputValu = (event) => {
+  //   const getQuantity = parseInt(event.target.number.value);
+  //   setGetValue(getQuantity);
+  //   console.log(getQuantity);
+  // };
 
   const incrise = (event) => {
     event.preventDefault();
     const getQuantity = parseInt(event.target.number.value);
-    console.log(getQuantity);
-    const getCartValue = parseInt(carInfo.quantity);
-    console.log(typeof carInfo.quantity);
-    let newQuantity = getCartValue + getQuantity;
-    const newProduct = { ...carInfo, quantity: newQuantity };
-    setCarInfo(newProduct);
-    fetch(`http://localhost:5000/Cars/${updateId}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newProduct),
-    });
+    if (getQuantity > 0) {
+      console.log(getQuantity);
+      const getCartValue = parseInt(carInfo.quantity);
+      console.log(typeof carInfo.quantity);
+      let newQuantity = getCartValue + getQuantity;
+      const newProduct = { ...carInfo, quantity: newQuantity };
+      setCarInfo(newProduct);
+      fetch(`http://localhost:5000/Cars/${updateId}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newProduct),
+      });
+      setError();
+    } else {
+      setError("please input positive value");
+    }
+    event.target.reset();
   };
 
   return (
@@ -86,16 +93,20 @@ const Inventory = () => {
             <button onClick={() => removeOne(updateId)}> Delivery </button>
           </div>
           <div>
-            <form onSubmit={incrise} className="quantity">
-              <input
-                type="number"
-                name="number"
-                className="w-50"
-                placeholder="Input Quantity"
-                required
-              />
-              {/* <button type="submit"> Restock </button> */}
-              <input type="submit" value="Restock" />
+            <form onSubmit={incrise} className="myForm-control">
+              <div className="quantity">
+                <input
+                  type="number"
+                  name="number"
+                  className="w-50"
+                  placeholder="Input Quantity"
+                  required
+                />
+
+                {/* <button type="submit"> Restock </button> */}
+                <input type="submit" value="Restock" />
+              </div>
+              <div style={{ color: "red" }}>{error}</div>
             </form>
           </div>
         </div>
