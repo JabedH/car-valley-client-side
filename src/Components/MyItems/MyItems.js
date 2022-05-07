@@ -16,7 +16,7 @@ const MyItems = () => {
   useEffect(() => {
     const email = user?.email;
     const getItem = async () => {
-      const url = `http://localhost:5000/addcar?email=${email}`;
+      const url = `https://car-valley1.herokuapp.com/addcar?email=${email}`;
       console.log(email);
       const { data } = await axios.get(url, {
         headers: {
@@ -31,7 +31,7 @@ const MyItems = () => {
     console.log(id);
     const confirmDelete = window.confirm("Are you want to delete?");
     if (confirmDelete) {
-      const url = `http://localhost:5000/addCar/${id}`;
+      const url = `https://car-valley1.herokuapp.com/addCar/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -87,7 +87,7 @@ const MyItems = () => {
   );
   // useEffect(() => {
   //   const getItem = async () => {
-  //     const url = "http://localhost:5000/addcar";
+  //     const url = "https://car-valley1.herokuapp.com/addcar";
   //     console.log();
   //     const { data } = await axios.get(url, {
   //       headers: {
@@ -106,7 +106,7 @@ const MyItems = () => {
   // const handleDelete = (id) => {
   //   const confirmDelete = window.confirm("Are you want to delete?");
   //   if (confirmDelete) {
-  //     const url = `http://localhost:5000/Cars/${id}`;
+  //     const url = `https://car-valley1.herokuapp.com/Cars/${id}`;
   //     fetch(url, {
   //       method: "DELETE",
   //     })

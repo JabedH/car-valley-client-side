@@ -22,7 +22,7 @@ const SocialLogin = () => {
   let from = location.state?.from?.pathname || "/";
   console.log(user?.user?.email);
   if (user) {
-    fetch("http://localhost:5000/login", {
+    fetch("https://car-valley1.herokuapp.com/login", {
       method: "POST",
       body: JSON.stringify({
         email: user?.user?.email,

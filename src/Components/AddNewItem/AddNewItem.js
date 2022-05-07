@@ -17,7 +17,7 @@ const AddNewItem = () => {
     const newInfo = { name, img, price, quantity, info };
     // console.log("submited", info);
 
-    fetch("http://localhost:5000/addCar", {
+    fetch("https://car-valley1.herokuapp.com/addCar", {
       method: "POST",
       body: JSON.stringify({
         name,

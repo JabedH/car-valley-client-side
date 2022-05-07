@@ -29,7 +29,10 @@ const Login = () => {
     const email = event.target.email.value;
     const password = event.target.password.value;
     await signInWithEmailAndPassword(email, password);
-    const { data } = await axios.post("http://localhost:5000/login", { email });
+    const { data } = await axios.post(
+      "https://car-valley1.herokuapp.com/login",
+      { email }
+    );
     localStorage.setItem("accessToken", data.token);
     navigate(from, { replace: true });
   };
@@ -40,7 +43,7 @@ const Login = () => {
   console.log(user?.user?.email);
   console.log(user?.email);
   // if (user) {
-  //   fetch("http://localhost:5000/login", {
+  //   fetch("https://car-valley1.herokuapp.com/login", {
   //     method: "POST",
   //     body: JSON.stringify({
   //       email: user?.user?.email,

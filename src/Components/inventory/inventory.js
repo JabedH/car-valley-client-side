@@ -12,7 +12,7 @@ const Inventory = () => {
   const [error, setError] = useState(" ");
 
   useEffect(() => {
-    const url = `http://localhost:5000/Cars/${updateId}`;
+    const url = `https://car-valley1.herokuapp.com/Cars/${updateId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setCarInfo(data));
@@ -23,7 +23,7 @@ const Inventory = () => {
     const newProduct = { ...carInfo, quantity: newQuantity };
     setCarInfo(newProduct);
 
-    fetch(`http://localhost:5000/Cars/${updateId}`, {
+    fetch(`https://car-valley1.herokuapp.com/Cars/${updateId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -48,7 +48,7 @@ const Inventory = () => {
       let newQuantity = getCartValue + getQuantity;
       const newProduct = { ...carInfo, quantity: newQuantity };
       setCarInfo(newProduct);
-      fetch(`http://localhost:5000/Cars/${updateId}`, {
+      fetch(`https://car-valley1.herokuapp.com/Cars/${updateId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
