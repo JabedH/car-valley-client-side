@@ -5,49 +5,11 @@ import twitter from "../../../../img/icon/twitter.svg";
 import link from "../../../../img/icon/link.svg";
 import youtube from "../../../../img/icon/youtube.svg";
 import instra from "../../../../img/icon/instra.svg";
-import man from "../../../../img/icon/customer.png";
-import money from "../../../../img/icon/money.png";
-import car from "../../../../img/icon/car.png";
-import location from "../../../../img/icon/location.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCar,
-  faCashRegister,
-  faLocation,
-  faMoneyBill,
-  faUser,
-} from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
   return (
     <div>
       <div>
-        <div className="money-icon ">
-          <div className=" user-icon">
-            <div className="container all-car-icon">
-              <div className="icon-center">
-                <img src={man} alt="" />
-                <h3>100%</h3>
-                <p>Customer Satisfaction</p>
-              </div>
-              <div className="icon-center">
-                <img src={car} alt="" />
-                <h3>2100</h3>
-                <p>Cars Sold</p>
-              </div>
-              <div className="icon-center">
-                <img src={money} alt="" />
-                <h3>$950,000</h3>
-                <p>Amount Sold</p>
-              </div>
-              <div className="icon-center">
-                <img src={location} alt="" />
-                <h3>7</h3>
-                <p>Locations</p>
-              </div>
-            </div>
-          </div>
-        </div>
         <div className="address">
           <div className="footer-info container">
             <div className="mt-4 mb-3">
