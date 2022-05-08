@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
+import Loading from "../../Loading/Loading";
 import "./Welcome.css";
 
 const Welcome = () => {

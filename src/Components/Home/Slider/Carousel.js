@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Carousel";
 import { Carousel } from "react-bootstrap";
 import bg1 from "../../../img/bg/bg3.jpg";
 import bg2 from "../../../img/bg/bg2.jpg";
 import bg3 from "../../../img/bg/bg5.jpg";
-import Loading from "../../Loading/Loading";
 
 const Slider = () => {
   return (
