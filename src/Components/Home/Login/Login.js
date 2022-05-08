@@ -23,7 +23,8 @@ const Login = () => {
 
   const location = useLocation();
   const navigate = useNavigate();
-
+  let from = location.state?.from?.pathname || "/";
+  let ErrorHandle;
   const Handlelogin = async (event) => {
     event.preventDefault();
     const email = event.target.email.value;
@@ -34,17 +35,10 @@ const Login = () => {
       { email }
     );
     localStorage.setItem("accessToken", data.token);
-    navigate(from, { replace: true });
   };
-  if (loading) {
-    return <Loading />;
+  if (user) {
+    navigate(from, { replace: true });
   }
-  let from = location.state?.from?.pathname || "/";
-  console.log(user?.user?.email);
-  console.log(user?.email);
-
-  let ErrorHandle;
-
   if (error) {
     ErrorHandle = (
       <div>
@@ -53,6 +47,9 @@ const Login = () => {
     );
   }
 
+  if (loading) {
+    return <Loading />;
+  }
   const handleReset = async () => {
     const email = emailRef.current.value;
     if (email) {

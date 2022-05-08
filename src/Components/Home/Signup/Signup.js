@@ -29,8 +29,7 @@ const Signup = () => {
     if (password !== confirmPass) {
       setNewError("You password did not match");
       return;
-    }
-    if (password.length < 6) {
+    } else if (password.length < 6) {
       setNewError("password must be 6 characters or longer");
       return;
     } else {
