@@ -26,7 +26,7 @@ const ManageInventories = () => {
     }
   };
   return (
-    <div>
+    <div className="ManageInventories">
       <div className="newItem mt-4">
         <Link to="/addnewitem">Add New Item</Link>
       </div>

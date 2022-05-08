@@ -1,6 +1,9 @@
 *:focus {
   outline: none;
 }
+.login {
+  min-height: 600px;
+}
 .all-login {
   width: 400px;
   margin-top: 150px;

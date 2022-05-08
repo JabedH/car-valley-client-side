@@ -42,22 +42,7 @@ const Login = () => {
   let from = location.state?.from?.pathname || "/";
   console.log(user?.user?.email);
   console.log(user?.email);
-  // if (user) {
-  //   fetch("https://car-valley1.herokuapp.com/login", {
-  //     method: "POST",
-  //     body: JSON.stringify({
-  //       email: user?.user?.email,
-  //     }),
-  //     headers: {
-  //       "Content-type": "application/json; charset=UTF-8",
-  //     },
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       localStorage.setItem("accessToken", data.token);
-  //       navigate(from, { replace: true });
-  //     });
-  // }
+
   let ErrorHandle;
 
   if (error) {
@@ -77,12 +62,9 @@ const Login = () => {
     if (!email) {
       setLogError("please put your correct email");
     }
-    // else {
-    //   toast("please enter your email address");
-    // }
   };
   return (
-    <div>
+    <div className="login">
       <div className="mt-5 all-login mx-auto">
         <Form onSubmit={Handlelogin} className="mx-auto text-start">
           <input

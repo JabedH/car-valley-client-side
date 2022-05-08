@@ -18,6 +18,7 @@ import Login from "./Components/Home/Login/Login";
 import ManageInventories from "./Components/ManageInventories/ManageInventories";
 import Inventory from "./Components/Inventory/Inventory";
 import AddNewItem from "./Components/AddNewItem/AddNewItem";
+import Footer from "./Components/Home/Header/Footer/Footer";
 
 function App() {
   return (
@@ -60,6 +61,7 @@ function App() {
         <Route path="/addnewitem" element={<AddNewItem />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

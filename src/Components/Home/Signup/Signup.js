@@ -42,59 +42,61 @@ const Signup = () => {
     navigate(from, { replace: true });
   }
   return (
-    <div className="mt-5 all-login mx-auto">
-      <Form onSubmit={handleSignup} className=" mx-auto text-start">
-        <input
-          name="name"
-          className="w-100 mt-3"
-          type="text"
-          placeholder="Name"
-          required
-        />
-        <input
-          name="email"
-          className="w-100 mt-3"
-          type="email"
-          placeholder="Enter email"
-          required
-        />
-        <input
-          name="password"
-          className="w-100 mt-3"
-          type="password"
-          placeholder="Password"
-          required
-        />
-        <input
-          name="confirmpass"
-          className="w-100 mt-3"
-          type="password"
-          placeholder="confirm Password"
-          required
-        />
-        <div className="text-center mt-2" style={{ color: "red" }}>
-          {newError}
-        </div>
+    <div className="login">
+      <div className="mt-5 all-login  mx-auto">
+        <Form onSubmit={handleSignup} className=" mx-auto text-start">
+          <input
+            name="name"
+            className="w-100 mt-3"
+            type="text"
+            placeholder="Name"
+            required
+          />
+          <input
+            name="email"
+            className="w-100 mt-3"
+            type="email"
+            placeholder="Enter email"
+            required
+          />
+          <input
+            name="password"
+            className="w-100 mt-3"
+            type="password"
+            placeholder="Password"
+            required
+          />
+          <input
+            name="confirmpass"
+            className="w-100 mt-3"
+            type="password"
+            placeholder="confirm Password"
+            required
+          />
+          <div className="text-center mt-2" style={{ color: "red" }}>
+            {newError}
+          </div>
 
-        <div className="login-btn">
-          <button className="w-100 btn-color mt-3" type="submit">
-            Sing Up
-          </button>
+          <div className="login-btn">
+            <button className="w-100 btn-color mt-3" type="submit">
+              Sing Up
+            </button>
+          </div>
+          <div className="mt-3 text-center">
+            <Link to="/login" className="text-decoration-none  ">
+              Already you have an account?
+            </Link>
+          </div>
+          <div className="social-lin ">
+            <dir className="or-line"></dir>
+            <p>or</p>
+            <dir className="or-line"></dir>
+          </div>
+        </Form>
+        <div className="social-login ">
+          <SocialLogin />
+          <ToastContainer />
         </div>
-        <div className="mt-3 text-center">
-          <Link to="/login" className="text-decoration-none  ">
-            Already you have an account?
-          </Link>
-        </div>
-        <div className="social-lin ">
-          <dir className="or-line"></dir>
-          <p>or</p>
-          <dir className="or-line"></dir>
-        </div>
-      </Form>
-      <div className="social-login ">
-        <SocialLogin />
-        <ToastContainer />
       </div>
     </div>
   );

@@ -1,7 +1,18 @@
-.vehicle-title {
-  font-weight: 700;
+.welcome-info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  gap: 20px;
+  width: 100%;
 }
-.vehicle-title:hover {
+.text-vehicle {
+  font-size: 15px;
+}
+.title-vehicle {
+  font-weight: 600;
+  font-size: 18px;
+}
+.title-vehicle:hover {
   color: #85d4ff;
 }
 .welcome-bg {
@@ -9,4 +20,14 @@
 }
 .welcome {
   border: none;
+}
+/* responsive */
+
+@media only screen and (max-width: 480px) {
+  .welcome-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    width: 100%;
+  }
 }

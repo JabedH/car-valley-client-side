@@ -45,7 +45,7 @@ const MyItems = () => {
     }
   };
   return (
-    <div>
+    <div className="MyItems">
       <div>
         <div className="container mt-4">
           <h1 className="text-center">All Added Item</h1>

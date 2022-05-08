@@ -1,11 +1,8 @@
 import React from "react";
+import "./AddItem.css";
 
 const AddItem = () => {
-  return (
-    <div>
-      <h1>AddItem</h1>
-    </div>
-  );
+  return <div className="AddItem"></div>;
 };
 
 export default AddItem;

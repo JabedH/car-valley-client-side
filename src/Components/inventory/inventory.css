@@ -17,6 +17,7 @@
   margin-top: 50px;
   display: grid;
   grid-template-columns: 2fr 1.5fr;
+  min-height: 600px;
 }
 .my-car-info {
   text-align: start;

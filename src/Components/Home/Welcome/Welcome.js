@@ -16,16 +16,16 @@ const Welcome = () => {
         Our happiness Your satisfaction. we are waiting for making you happy. we
         are trying to provide the best service.
       </p>
-      <div className="d-flex flex-wrap justify-content-center gap-5 container ">
+      <div className=" container welcome-info ">
         {vehicles.map((vehicle) => (
           <div key={vehicle._id}>
-            <Card className="welcome" style={{ width: "15rem" }}>
+            <Card className="welcome">
               <Card.Img variant="top" src={vehicle.img} />
               <Card.Body>
-                <Card.Title className="vehicle-title">
+                <Card.Title className="title-vehicle ">
                   {vehicle.name}
                 </Card.Title>
-                <Card.Text>{vehicle.info}</Card.Text>
+                <Card.Text className="text-vehicle ">{vehicle.info}</Card.Text>
               </Card.Body>
             </Card>
           </div>
