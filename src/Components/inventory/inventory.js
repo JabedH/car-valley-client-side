@@ -5,7 +5,6 @@ import { toast, ToastContainer } from "react-toastify";
 
 const Inventory = () => {
   const [product, setProduct] = useState({});
-  console.log(product.quantity);
   const { updateId } = useParams();
   const [carInfo, setCarInfo] = useState({});
   const { name, info, price, supplier, quantity, img } = carInfo;
@@ -19,32 +18,26 @@ const Inventory = () => {
   }, [product]);
 
   const removeOne = () => {
-    let newQuantity = carInfo.quantity - 1;
-    const newProduct = { ...carInfo, quantity: newQuantity };
-    setCarInfo(newProduct);
+    if (carInfo.quantity > 0) {
+      let newQuantity = carInfo.quantity - 1;
+      const newProduct = { ...carInfo, quantity: newQuantity };
+      setCarInfo(newProduct);
 
-    fetch(`https://car-valley1.herokuapp.com/Cars/${updateId}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newProduct),
-    });
+      fetch(`https://car-valley1.herokuapp.com/Cars/${updateId}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newProduct),
+      });
+    }
   };
-
-  // const getInputValu = (event) => {
-  //   const getQuantity = parseInt(event.target.number.value);
-  //   setGetValue(getQuantity);
-  //   console.log(getQuantity);
-  // };
 
   const incrise = (event) => {
     event.preventDefault();
     const getQuantity = parseInt(event.target.number.value);
     if (getQuantity > 0) {
-      console.log(getQuantity);
       const getCartValue = parseInt(carInfo.quantity);
-      console.log(typeof carInfo.quantity);
       let newQuantity = getCartValue + getQuantity;
       const newProduct = { ...carInfo, quantity: newQuantity };
       setCarInfo(newProduct);
@@ -84,7 +77,7 @@ const Inventory = () => {
               <b>Supplier:</b> {supplier}{" "}
             </p>
             <h5 style={{ color: "red" }} className="mb-3">
-              {quantity == "0" || null ? "Sold This Car" : ""}
+              {quantity == "0" ? "Sold This Car" : ""}
             </h5>
           </div>
         </div>

@@ -1,3 +1,5 @@
+.social-icon {
+}
 .social-icon img {
   width: 30px;
   margin-left: 10px;
@@ -13,7 +15,7 @@
 }
 .footer-info {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   justify-items: center;
   gap: 50px;
 }
@@ -33,4 +35,16 @@
 }
 /* responsive */
 @media only screen and (max-width: 480px) {
+  .footer-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+  }
+  .footer-info h3 {
+    font-size: 15px;
+  }
+  .social-icon img {
+    width: 20%;
+  }
 }

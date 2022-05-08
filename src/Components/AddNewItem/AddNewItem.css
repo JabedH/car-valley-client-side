@@ -1,7 +1,9 @@
 *:focus {
   outline: none;
 }
-
+.inputupdate {
+  min-height: 700px;
+}
 .carinfo {
   display: grid;
   width: 60%;

@@ -12,7 +12,7 @@ const Footer = () => {
       <div>
         <div className="address">
           <div className="footer-info container">
-            <div className="mt-4 mb-3">
+            <div className="mt-4 mb-3 ">
               <h3>Address</h3>
               <ul>
                 <li>811 7th Ave</li>

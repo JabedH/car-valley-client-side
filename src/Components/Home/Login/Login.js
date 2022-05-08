@@ -20,7 +20,6 @@ const Login = () => {
     useSignInWithEmailAndPassword(auth);
   const [sendPasswordResetEmail, sending, error1] =
     useSendPasswordResetEmail(auth);
-
   const location = useLocation();
   const navigate = useNavigate();
   let from = location.state?.from?.pathname || "/";

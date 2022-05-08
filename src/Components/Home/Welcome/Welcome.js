@@ -5,7 +5,7 @@ import "./Welcome.css";
 const Welcome = () => {
   const [vehicles, setVehicles] = useState([]);
   useEffect(() => {
-    fetch("section1data.json")
+    fetch("https://car-valley1.herokuapp.com/Vehicles")
       .then((res) => res.json())
       .then((data) => setVehicles(data));
   }, []);

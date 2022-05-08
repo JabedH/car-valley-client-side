@@ -51,20 +51,19 @@ const MyItems = () => {
           <h1 className="text-center">All Added Item</h1>
           <Table striped bordered hover>
             <thead>
-              <tr>
+              <tr className="text-center">
                 {/* <th>#</th> */}
                 <th>Item name</th>
-                <th>Quantity</th>
+                {/* <th>Quantity</th> */}
                 <th>Price</th>
                 <th>Image</th>
+                <th>Delete</th>
               </tr>
             </thead>
             <tbody>
               {getCar.map((car) => (
                 <tr key={car._id} className="table">
-                  <td>#</td>
                   <td>{car.name}</td>
-                  {/* <td>{car.quantity === null ? 0 : car.quantity}</td> */}
                   <td>{car.price}</td>
                   <td>
                     <div className="table-img">
@@ -85,39 +84,6 @@ const MyItems = () => {
       </div>
     </div>
   );
-  // useEffect(() => {
-  //   const getItem = async () => {
-  //     const url = "https://car-valley1.herokuapp.com/addcar";
-  //     console.log();
-  //     const { data } = await axios.get(url, {
-  //       headers: {
-  //         authorization: `${user?.email} ${localStorage.getItem(
-  //           "accessToken"
-  //         )}`,
-  //       },
-  //     });
-  //     setGetcar(data);
-
-  //     // .then((res) => res.json())
-  //     // .then((data) => setGetcar(data));
-  //   };
-  //   getItem();
-  // }, [user?.email]);
-  // const handleDelete = (id) => {
-  //   const confirmDelete = window.confirm("Are you want to delete?");
-  //   if (confirmDelete) {
-  //     const url = `https://car-valley1.herokuapp.com/Cars/${id}`;
-  //     fetch(url, {
-  //       method: "DELETE",
-  //     })
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         if (data.deletedCount > 0) {
-  //           const remaining = getCar.filter((car) => car._id !== id);
-  //           setGetcar(remaining);
-  //         }
-  //       });
-  //   }
 };
 
 export default MyItems;

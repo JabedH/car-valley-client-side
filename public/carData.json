@@ -64,5 +64,71 @@
     "ratting": "4.1",
     "Fuel": "Petrol",
     "use": "Used"
+  },
+  {
+    "name": "Nissan Quest - 2015",
+    "img": "https://raw.githubusercontent.com/All-MyProject/car-vally-img/main/cars/1.jpg",
+    "info": "This car is a 2015's Model. Car's HorsePower is 210 KW. Fuel Tank Capacity 67L. Interior Color is White and Exterior color is Gray",
+    "price": "24,800",
+    "quantity": "14",
+    "supplier": "NISSAN",
+    "ratting": "4.5",
+    "Fuel": "Petrol",
+    "use": "New"
+  },
+  {
+    "name": "Honda Civic - 2019",
+    "img": "https://raw.githubusercontent.com/All-MyProject/car-vally-img/main/cars/2.jpg",
+    "info": "This car is a 2019's Model. Car's HorsePower is 270 KW. Fuel Tank Capacity 67L. Interior Color is White and Exterior color is Gray",
+    "price": "32,800",
+    "quantity": "7",
+    "supplier": "HONDA",
+    "ratting": "4.7",
+    "Fuel": "Petrol /Gas",
+    "use": "Used"
+  },
+  {
+    "name": "Porsche 928 - 2017",
+    "img": "https://raw.githubusercontent.com/All-MyProject/car-vally-img/main/cars/3.jpg",
+    "info": "This car is a 2017's Model. Car's HorsePower is 230 KW. Fuel Tank Capacity 67L. Interior Color is White and Exterior color is Gray",
+    "price": "22,800",
+    "quantity": "10",
+    "supplier": "PORSCHE",
+    "ratting": "4.3",
+    "Fuel": "Petrol",
+    "use": "Used"
+  },
+  {
+    "name": "Toyota Land Cruiser - 2018",
+    "img": "https://raw.githubusercontent.com/All-MyProject/car-vally-img/main/cars/5.jpg",
+    "info": "This car is a 2018's Model. Car's HorsePower is 190 KW. Fuel Tank Capacity 67L. Interior Color is White and Exterior color is Gray",
+    "price": "25,400",
+    "quantity": "10",
+    "supplier": "TOYOTA",
+    "ratting": "4.1",
+    "Fuel": "Petrol/Gas",
+    "use": "New"
+  },
+  {
+    "name": "American Motors Eagle - 2020",
+    "img": "https://raw.githubusercontent.com/All-MyProject/car-vally-img/main/cars/6.jpg",
+    "info": "This car is a 2020's Model. Car's HorsePower is 233 KW. Fuel Tank Capacity 67L. Interior Color is White and Exterior color is Gray",
+    "price": "19,800",
+    "quantity": "12",
+    "supplier": "EAGLE",
+    "ratting": "4.1",
+    "Fuel": "Petrol",
+    "use": "Used"
+  },
+  {
+    "name": "Lexus LS - 2017",
+    "img": "https://raw.githubusercontent.com/All-MyProject/car-vally-img/main/cars/7.jpg",
+    "info": "This car is a 2020's Model. Car's HorsePower is 250 KW. Fuel Tank Capacity 67L. Interior Color is White and Exterior color is Gray",
+    "price": "24,800",
+    "quantity": "10",
+    "supplier": "LEXUS",
+    "ratting": "4.55",
+    "Fuel": "Petrol",
+    "use": "New"
   }
 ]
