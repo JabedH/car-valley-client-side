@@ -5,12 +5,13 @@ or https://car-vally.firebaseapp.com/
 
 ### About this siite.
 
-* This is a car inverntory realated site.
-* This site only for wholesel old new car.
-* In this site hase a footer and header.
-* Added more than 3 seaction about car.
-* inventory section has Update button where i can incrise value and added new item.
+* This is a car inventory-related site.
+* This site is only for wholesale old new cars.
+* In this site has a footer and header.
+* Added more than 3 sections about cars.
+* inventory section has Update button where I can incrise value and added new item.
 * Added addded login and logout button. 
+
 
 ### About technology.
 * Html 
