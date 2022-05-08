@@ -8,12 +8,9 @@ or https://car-vally.firebaseapp.com/
 * This is a car inverntory realated site.
 * This site only for wholesel old new car.
 * In this site hase a footer and header.
-* added more than 3 seaction about car.
-*
-* This site also added service which is anyone can bye easily.
-* I ahve addded login and logout button. 
-* I have shown picture and reviews section.
-* Top of the i ahve use carosul for sliding image which is look like intaresting.
+* Added more than 3 seaction about car.
+* inventory section has Update button where i can incrise value and added new item.
+* Added addded login and logout button. 
 
 ### About technology.
 * Html 
@@ -25,3 +22,4 @@ or https://car-vally.firebaseapp.com/
 * react firebase hooks 
 * react roouts 
 * react Rating
+* JWT token
